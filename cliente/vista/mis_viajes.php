@@ -1,5 +1,5 @@
 <?php
-include ('encabezado/encabezado.php')
+include_once ('encabezado/encabezado.php')
 ?>
 <div class="contenedor">
     <div class="nav">
@@ -18,6 +18,7 @@ include ('encabezado/encabezado.php')
                 <form action="" method="post" >  
                     <label for="buscar">buscar</label>                                   
                     <input type="text" name="buscar" id="buscar" placeholder="buscar" >
+                    <button type="submit">buscar</button>
                 </form>
             </div>
         </div>
@@ -84,5 +85,5 @@ include ('encabezado/encabezado.php')
   </div>
 </div>
 <?php
-include ('pie/pie.php')
+include_once('pie/pie.php')
 ?>

@@ -1,5 +1,5 @@
 <?php
-include ('encabezado/encabezado.php')
+include_once ('encabezado/encabezado.php')
 ?>
 
 
@@ -35,5 +35,5 @@ include ('encabezado/encabezado.php')
 </div>
 
 <?php
-include ('pie/pie.php')
+include_once ('pie/pie.php')
 ?>

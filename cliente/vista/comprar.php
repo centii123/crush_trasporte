@@ -1,5 +1,5 @@
 <?php
-include('encabezado/encabezado.php')
+include_once('encabezado/encabezado.php')
 ?>
 <div class="contenedor">
     <div class="nav">
@@ -61,5 +61,5 @@ include('encabezado/encabezado.php')
         </div>
 </div>
 <?php
-include('pie/pie.php')
+include_once('pie/pie.php')
 ?>

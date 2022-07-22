@@ -29,7 +29,12 @@ class catalogo extends coneccion{
     public $query;
 
     public function tajetas(){
-        $this->consulta="SELECT * FROM viajes ";// cambiar aqui primero en postgres 
+        $this->consulta="SELECT * FROM viajes";// cambiar aqui primero en postgres 
+        $this->query=pg_query($this->conex,$this->consulta);// donde y que voy a consultar 
+        return $this->query;
+    }
+    public function provincias(){
+        $this->consulta="SELECT * FROM provincia";// cambiar aqui primero en postgres 
         $this->query=pg_query($this->conex,$this->consulta);// donde y que voy a consultar 
         return $this->query;
     }

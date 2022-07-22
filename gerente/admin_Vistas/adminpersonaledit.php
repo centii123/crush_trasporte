@@ -1,5 +1,5 @@
 <?php
-include('encabezado/admincabeza.php');
+include_once('encabezado/admincabeza.php');
 ?>
     <div class="contenedor">
         <div class="nav">

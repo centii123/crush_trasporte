@@ -1,4 +1,5 @@
 <?php  
+include_once('../admin_modelo/baseDatos.php');
 
 //buses
 function verBuses(){

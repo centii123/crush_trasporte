@@ -1,5 +1,5 @@
 <?php  
-
+include_once('../admin_modelo/baseDatos.php');
 
 if(isset($_POST['boton'])){
     $estado=$_POST['estado'];

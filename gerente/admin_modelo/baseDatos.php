@@ -1,11 +1,15 @@
 <?php
 
 class Conexion{
-    //atributos
+    private $host='localhost';
+    private $port=5432;
+    private $base='crush';
+    private $user='postgres';
+    private $pass='Juventud123';
     public $conex;
-    //metodos
-    public function __construct(){
-        $this->conex = pg_connect("host=localhost port=5432 dbname=crush user=postgres password=Juventud123");
+    public function __construct()
+    {
+        $this->conex=pg_connect("host=$this->host port=$this->port dbname=$this->base user=$this->user password=$this->pass");
     }
     public function hola(){
         return $this->conex;
@@ -74,6 +78,35 @@ class Mostrar extends Conexion{
             <?php
         }
     }
+
+    public function bus(){
+        $this->consulta="SELECT * FROM buses";
+        $this->query= pg_query($this->conex,$this->consulta);
+        while($this->row=pg_fetch_array($this->query)){
+            ?>
+            <option value="<?php echo $this->row['placab'] ?>"><?php echo $this->row['modelo'] ?></option>
+            <?php
+        }
+    }
+
+    public function chofer(){
+        $this->consulta="SELECT * FROM empleados WHERE rolesid = 1";
+        $this->query= pg_query($this->conex,$this->consulta);
+        while($this->row=pg_fetch_array($this->query)){
+            ?>
+                <option value="<?php echo $this->row['cedulae'] ?>"><?php echo $this->row['nombres']." ".$this->row['apellidos'] ?></option>
+            <?php
+        }
+    }
+    public function oficial(){
+        $this->consulta="SELECT * FROM empleados WHERE rolesid = 2";
+        $this->query= pg_query($this->conex,$this->consulta);
+        while($this->row=pg_fetch_array($this->query)){
+            ?>
+            <option value="<?php echo $this->row['cedulae'] ?>"><?php echo $this->row['nombres']." ".$this->row['apellidos'] ?></option>
+            <?php
+        }
+    }
 }
 
 class Insertar extends Conexion{
@@ -82,6 +115,12 @@ class Insertar extends Conexion{
 
     public function busI($id,$modelo,$asientos,$imagen,$estado){
         $this->consulta= "INSERT INTO buses VALUES ('$id','$modelo',$asientos,'$imagen',$estado)";
+        $this->query= pg_query($this->conex, $this->consulta);
+        return $this->query;
+    }
+
+    public function personalI($cedula,$nombres,$apellidos,$estado,$imagen,$role){
+        $this->consulta= "INSERT INTO empleados VALUES ($cedula,'$nombres','$apellidos',$estado,'$imagen',$role)";
         $this->query= pg_query($this->conex, $this->consulta);
         return $this->query;
     }

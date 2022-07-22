@@ -1,9 +1,7 @@
 <?php
 session_start();
 $_SESSION['usuario']='Blanca Elvia Yela Yela';
-include('../admin_modelo/baseDatos.php');
 include('../admin_controlador/controlador.php');
-$Mostrar=new Mostrar();
 ?>
 <!DOCTYPE html>
 <html lang="en">

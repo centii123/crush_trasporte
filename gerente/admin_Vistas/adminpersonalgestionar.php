@@ -1,5 +1,6 @@
 <?php
-include('encabezado/admincabeza.php');
+include_once('encabezado/admincabeza.php');
+$Mostrar=new Mostrar();
 ?>
     <div class="contenedor">
         <div class="nav">
@@ -73,5 +74,5 @@ include('encabezado/admincabeza.php');
         </div>
     </div>
     <?php
-include('pie/pie.php');
+include_once('pie/pie.php');
 ?>

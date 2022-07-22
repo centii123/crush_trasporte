@@ -1,7 +1,7 @@
 <div id="espacioA"></div>
 <?php
-include('encabezado/admincabeza.php');
-include('../admin_controlador/agregarbus.php')
+include_once('encabezado/admincabeza.php');
+include_once('../admin_controlador/bus.php')
 ?>
 
     <div class="contenedor">
@@ -52,5 +52,5 @@ include('../admin_controlador/agregarbus.php')
         </div>
     </div>
 <?php
-include('pie/pie.php');
+include_once('pie/pie.php');
 ?>

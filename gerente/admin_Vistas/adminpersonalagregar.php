@@ -1,7 +1,7 @@
 <div id="espacioA"></div>
 <?php
-include('encabezado/admincabeza.php');
-include('../admin_controlador/agregarpersonal.php')
+include_once('encabezado/admincabeza.php');
+include_once('../admin_controlador/personal.php')
 ?>
     <div class="contenedor">
         <div class="nav">
@@ -35,11 +35,11 @@ include('../admin_controlador/agregarpersonal.php')
                             <option value="0">Inactivo</option>
                         </select>
                         <label for="nombre">cedula</label>
-                        <input type="number" name="nombre" id="nombre" placeholder="nombre" >
+                        <input type="number" name="cedula" id="nombre" placeholder="nombre" >
                         <label for="nombre">nombres</label>
-                        <input type="text" name="nombre" id="nombre" placeholder="nombre" >
+                        <input type="text" name="nombres" id="nombre" placeholder="nombre" >
                         <label for="apellido">apellidos</label>
-                        <input type="text" name="apellido" id="apellido" placeholder="apellido" >
+                        <input type="text" name="apellidos" id="apellido" placeholder="apellido" >
                         <label for="role">role</label>
                         <select name="role" id="role" required>
                             <option value="">--role</option> <!--values es el valor que envias en php-->
@@ -48,7 +48,7 @@ include('../admin_controlador/agregarpersonal.php')
                             ?>
                         </select>
                         <label for="img">Foto del empleado</label>
-                        <input type="file" name="" id="img" >   
+                        <input type="file" name="foto" id="img" >   
                         <button type="submit" name="boton">Registrar</button>
                     </form>
                 </div>
@@ -56,5 +56,5 @@ include('../admin_controlador/agregarpersonal.php')
         </div>
     </div>
     <?php
-include('pie/pie.php');
+include_once('pie/pie.php');
 ?>

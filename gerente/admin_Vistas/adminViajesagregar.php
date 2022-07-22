@@ -1,7 +1,7 @@
 <div id="espacioA"></div>
 <?php
-include('encabezado/admincabeza.php');
-include('../admin_controlador/agregarviaje.php')
+include_once('encabezado/admincabeza.php');
+include_once('../admin_controlador/viaje.php')
 ?>
     <div class="contenedor">
         <div class="nav">
@@ -55,14 +55,23 @@ include('../admin_controlador/agregarviaje.php')
                         <label for="bus">bus</label>
                         <select name="bus" id="bus" >
                             <option value="">--bus</option>
+                            <?php
+                                echo $Mostrar->bus()
+                            ?>
                         </select>
                         <label for="bus">chofer</label>
                         <select name="bus" id="bus" >
                             <option value="">--chofer</option>
+                            <?php
+                                echo $Mostrar->chofer()
+                            ?>
                         </select>  
                         <label for="bus">oficial</label>
                         <select name="bus" id="bus" >
                             <option value="">--oficial</option>
+                            <?php
+                                echo $Mostrar->oficial()
+                            ?>
                         </select>                        
                         <label for="img">Foto del viaje</label>
                         <input type="file" name="" id="img" >
@@ -73,5 +82,5 @@ include('../admin_controlador/agregarviaje.php')
         </div>
     </div>
     <?php
-include('pie/pie.php');
+include_once('pie/pie.php');
 ?>

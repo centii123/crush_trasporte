@@ -2,9 +2,9 @@
 include_once('../modelo/conexion.php');
 
 
-
+// ISSET PARA DECIR SI SE ENCONTRO, SI SE ENCONTRO EN EL METODO DE POST QUE HAGO
 function tarjetas(){
-    if(isset($_POST['botonb'])){// ISSET PARA DECIR SI SE ENCONTRO, SI SE ENCONTRO EN EL METODO DE POST QUE HAGO
+    if(isset($_POST['botonb'])){
         if(strlen($_POST['llegada'] > 0)){
             $llegada=$_POST['llegada'];
         }else{

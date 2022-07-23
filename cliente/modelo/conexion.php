@@ -4,7 +4,7 @@ class coneccion{
     private $port=5432;
     private $base='crush';
     private $user='postgres';
-    private $pass= 'Juventud123';
+    private $pass= '123';
     public $conex;
     public function __construct()
     {
@@ -39,8 +39,8 @@ class catalogo extends coneccion{
     public $consulta;
     public $query;
 
-    public function tajetas($salida,$llegada){
-        $this->consulta="SELECT viajes.viajesid,viajes.fotoviaje,viajes.fechaviaje,viajes.costoviaje,viajes.placab,viajes.estadosid,salida.descripcion provinciasalida,llegada.descripcion provinciallegada FROM viajes INNER JOIN provincia salida ON salida.provinciaid=viajes.provinciasalida INNER JOIN provincia llegada ON llegada.provinciaid=viajes.provinciallegada WHERE salida.provinciaid = $salida or llegada.provinciaid = $llegada ";// cambiar aqui primero en postgres 
+    public function tajetas($salida,$llegada,$estados){
+        $this->consulta="SELECT viajes.viajesid,viajes.fotoviaje,viajes.fechaviaje,viajes.costoviaje,viajes.placab,viajes.estadosid,salida.descripcion provinciasalida,llegada.descripcion provinciallegada FROM viajes INNER JOIN provincia salida ON salida.provinciaid=viajes.provinciasalida INNER JOIN provincia llegada ON llegada.provinciaid=viajes.provinciallegada WHERE salida.provinciaid = $salida OR llegada.provinciaid = $llegada OR viajes.estadosid = $estados";// cambiar aqui primero en postgres 
         $this->query=pg_query($this->conex,$this->consulta);// donde y que voy a consultar 
         return $this->query;
     }
@@ -57,5 +57,7 @@ class buscar extends coneccion{
         return $this->query;
     }
 }
+
+
 
 ?>

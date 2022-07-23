@@ -5,24 +5,27 @@ include_once('../modelo/conexion.php');
 // ISSET PARA DECIR SI SE ENCONTRO, SI SE ENCONTRO EN EL METODO DE POST QUE HAGO
 function tarjetas(){
     if(isset($_POST['botonb'])){
-        if(strlen($_POST['llegada'] > 0)){
-            $llegada=$_POST['llegada'];
+        if($_POST['llegada']){
+            $llegada=intval($_POST['llegada']);
         }else{
-            $llegada="";
+            $llegada=0;
         }
 
-        if(strlen($_POST['salida'])>0){
-            $salida=$_POST['salida'];;
+        if($_POST['salida']){
+            $salida=intval($_POST['salida']);
+            
         }else{
-            $salida="";
+            $salida=0;
         }
+        $estados=0;
     }else{
-        $llegada="";
-        $salida="";
+        $llegada=0;
+        $salida=0;
+        $estados=1;
     }
     
     $conexcatalogo= new catalogo();
-    $funsion=$conexcatalogo->tajetas($salida,$llegada);
+    $funsion=$conexcatalogo->tajetas($salida,$llegada,$estados);
     while($row=pg_fetch_array($funsion)){
         ?>
           <!--margin-->

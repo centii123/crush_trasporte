@@ -15,7 +15,8 @@ if(isset($_POST['boton'])){
     if(in_array($filetipo,$imagen)){
         move_uploaded_file($filerute,"../img/$filen");
         $conex= new Insertar();
-        $ingresar= $conex->busI($placa,$modelo,$asientos,$filen,$estado)
+        $ingresar= $conex->busI($placa,$modelo,$asientos,$filen,$estado);
+        
         ?>
             <script>
             let espacio=document.querySelector('#espacioA')

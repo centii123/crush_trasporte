@@ -84,7 +84,7 @@ class Mostrar extends Conexion{
         $this->query= pg_query($this->conex,$this->consulta);
         while($this->row=pg_fetch_array($this->query)){
             ?>
-            <option value="<?php echo $this->row['placab'] ?>"><?php echo $this->row['modelo'] ?></option>
+            <option value="<?php echo $this->row['placab'] ?>"><?php echo $this->row['placab'] ?></option>
             <?php
         }
     }
@@ -116,6 +116,7 @@ class Insertar extends Conexion{
     public function busI($id,$modelo,$asientos,$imagen,$estado){
         $this->consulta= "INSERT INTO buses VALUES ('$id','$modelo',$asientos,'$imagen',$estado)";
         $this->query= pg_query($this->conex, $this->consulta);
+        
         return $this->query;
     }
 
@@ -123,6 +124,25 @@ class Insertar extends Conexion{
         $this->consulta= "INSERT INTO empleados VALUES ($cedula,'$nombres','$apellidos',$estado,'$imagen',$role)";
         $this->query= pg_query($this->conex, $this->consulta);
         return $this->query;
+    }
+
+    public function viajeI($imagen,$fechaviaje,$costo,$salida,$llegada,$bus,$estadosid,$chofer,$conductor){
+        $this->consulta= "INSERT INTO viajes(fotoviaje,fechaviaje,costoviaje,provinciasalida,provinciallegada,placab,estadosid) VALUES ('$imagen','$fechaviaje',$costo,$salida,$llegada,'$bus',$estadosid)";
+        $this->query= pg_query($this->conex, $this->consulta);
+
+        if($this->query){
+            $viaje=pg_last_oid($this->query);
+            $this->consulta="INSERT INTO viajes(cedulae,viajesid) VALUES ('$imagen','$fechaviaje',$costo,$salida,$llegada,'$bus',$estadosid)";
+        }
+
+        return $viaje;
+    }
+
+    public function prueba(){
+        $this->consulta= "INSERT INTO  VALUES ";
+        $this->query= pg_query($this->conex, $this->consulta);
+        $viaje=pg_last_oid($this->query);
+        print_r($viaje);
     }
 }
 

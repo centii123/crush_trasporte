@@ -8,7 +8,7 @@ CREATE TABLE usuario (
 );
 
 CREATE TABLE pasajero (
-  cedulaP INTEGER PRIMARY KEY NOT NULL,
+  cedulaP BIGINT PRIMARY KEY NOT NULL,
   nombres VARCHAR(100) NOT NULL,
   apellidos VARCHAR(100) NOT NULL,
   asiento INTEGER NOT NULL,
@@ -19,8 +19,8 @@ CREATE TABLE boleto (
   boletoid SERIAL PRIMARY KEY NOT NULL,
   tipo_cuenta INTEGER NOT NULL,
   nombre_titular VARCHAR(100) NOT NULL,
-  numero_cuenta INTEGER NOT NULL,
-  codigo_cvc INTEGER NOT NULL,
+  numero_cuenta BIGINT NOT NULL,
+  codigo_cvc BIGINT NOT NULL,
   fecha_compra DATE NOT NULL,
   usuarioid INTEGER,
   viajesid INTEGER
@@ -51,7 +51,7 @@ CREATE TABLE buses (
 );
 
 CREATE TABLE empleados (
-  cedulaE INTEGER PRIMARY KEY NOT NULL,
+  cedulaE BIGINT PRIMARY KEY NOT NULL,
   nombres VARCHAR(100) NOT NULL,
   apellidos VARCHAR(100) NOT NULL,
   estados INTEGER NOT NULL,

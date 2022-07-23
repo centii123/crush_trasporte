@@ -17,29 +17,45 @@ class coneccion{
 /*$conec= new coneccion();
 
 $comprobacion=$conec->con();
-
+        
 if($comprobacion){
     echo 'si';
 }else{
     echo 'no';
 }*/
 
+class ver extends coneccion{
+
+    public $consulta;
+    public $query;
+    public function provincias(){
+    $this->consulta="SELECT * FROM provincia";
+    $this->query=pg_query($this->conex,$this->consulta);
+    return $this->query;
+}
+}
+
 class catalogo extends coneccion{
     public $consulta;
     public $query;
 
-    public function tajetas(){
-        $this->consulta="SELECT * FROM viajes";// cambiar aqui primero en postgres 
+    public function tajetas($salida,$llegada){
+        $this->consulta="SELECT viajes.viajesid,viajes.fotoviaje,viajes.fechaviaje,viajes.costoviaje,viajes.placab,viajes.estadosid,salida.descripcion provinciasalida,llegada.descripcion provinciallegada FROM viajes INNER JOIN provincia salida ON salida.provinciaid=viajes.provinciasalida INNER JOIN provincia llegada ON llegada.provinciaid=viajes.provinciallegada WHERE salida.provinciaid = $salida or llegada.provinciaid = $llegada ";// cambiar aqui primero en postgres 
         $this->query=pg_query($this->conex,$this->consulta);// donde y que voy a consultar 
         return $this->query;
     }
-    public function provincias(){
-        $this->consulta="SELECT * FROM provincia";// cambiar aqui primero en postgres 
-        $this->query=pg_query($this->conex,$this->consulta);// donde y que voy a consultar 
-        return $this->query;
-    }
+    
+   
 
 }
-
+class buscar extends coneccion{
+    public $consulta;
+    public $query;
+    public function buscar(){
+        $this->consulta="SELECT * FROM provincia";
+        $this->query=pg_query($this->conex,$this->consulta);
+        return $this->query;
+    }
+}
 
 ?>

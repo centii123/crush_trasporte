@@ -4,38 +4,55 @@ include_once('../modelo/conexion.php');
 
 
 function tarjetas(){
-    $provinciarr=[];
-    $conexcatalogo= new catalogo();
-    $funsion=$conexcatalogo->tajetas();
-    $provincias=$conexcatalogo->provincias();
-    while($provincia=pg_fetch_array($provincias)){
-        $provinciarr[]=[
-            'id'=> $provincia['provinciaid'],
-            'provincia'=>$provincia['descripcion']
-        ];
+    if(isset($_POST['botonb'])){// ISSET PARA DECIR SI SE ENCONTRO, SI SE ENCONTRO EN EL METODO DE POST QUE HAGO
+        if(strlen($_POST['llegada'] > 0)){
+            $llegada=$_POST['llegada'];
+        }else{
+            $llegada="";
+        }
+
+        if(strlen($_POST['salida'])>0){
+            $salida=$_POST['salida'];;
+        }else{
+            $salida="";
+        }
+    }else{
+        $llegada="";
+        $salida="";
     }
-    $tipo=$provinciarr['id'];
-    echo gettype($tipo);
-    print_r($provinciarr);
+    
+    $conexcatalogo= new catalogo();
+    $funsion=$conexcatalogo->tajetas($salida,$llegada);
     while($row=pg_fetch_array($funsion)){
         ?>
-            <!--margin-->
+          <!--margin-->
             <div class="card"> <!--border-->
-                <h1><?php echo $row['estadosid'] ?></h1>
-                <?php
-                    if(in_array($row['provinciallegada'],$provinciarr['id'])){
-                      echo $provinciarr['provincia'];
-                    }
-                ?>
+                <h1><?php echo $row['viajesid'] ?></h1>              
                 <img src="https://www.elagoradiario.com/wp-content/uploads/2022/05/Sidney-Australia-1140x600.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit eos veritatis facere aliquam enim quod expedita velit? Doloribus nostrum voluptate necessitatibus nemo, omnis expedita dolores itaque corporis, assumenda officia totam!</p>
+                <h3>provincia salida: <?php echo $row['provinciasalida'] ?><br> provincia llegada: <?php echo $row['provinciallegada'] ?></h3>
+                <p>costo: <?php echo $row['costoviaje'] ?><br><br>bus: <?php echo $row['placab'] ?></p>
+                
                 <button><a href="datos.php">RESERVAR</a></button>
                 <!--padding-->
             </div>
         <?php
     }
-    /*<h3>provincia salida: <?php echo $row['provinciasalida'] ?><br> provincia llegada: <?php echo $row['provinciallegada'] ?></h3>*/
+}
+
+function provincia(){
+    $conexver= new ver();
+    $funsion=$conexver->provincias();
+    while($row=pg_fetch_array($funsion)){
+        ?>
+        <option value="<?php echo $row ['provinciaid']?>"><?php echo $row['descripcion']?></option> 
+        
+        <?php
+
+    }
 
 }
+
+
+
 
 ?>

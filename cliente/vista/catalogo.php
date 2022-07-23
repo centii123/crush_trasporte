@@ -1,6 +1,6 @@
 <?php
 include_once ('encabezado/encabezado.php');
-include_once('../controladores/catalogo.php')
+include_once('../controladores/catalogo.php');
 ?>
 <div class="contenedor">
     <div class="nav">
@@ -17,20 +17,18 @@ include_once('../controladores/catalogo.php')
         <hr>
         <div class="flex">
             <div class="busqueda">               
-                <form action="" method="post" >                   
-                    <label for="destino">PAIS DESTINO</label>
-                        <select name="destino" id="destino">
-                            <option value=""></option> 
-                            <option value="34">Miami</option>
+                <form action="catalogo.php" method="post" >                   
+                    <label for="destino">PROVINCIA DESTINO</label>
+                        <select name="salida" id="destino">
+                        <option value="">--provincia</option> 
+                           <?php echo provincia()?> 
                         </select>
-                    <label for="llegada">PAIS LLEGADA</label>
+                    <label for="llegada">PROVINCIA LLEGADA</label>
                     <select name="llegada" id="llegada">
-                        <option value=""></option> 
-                        <option value="34">Miami</option>
+                    <option value="">--provincia</option> 
+                    <?php echo provincia()?> 
                     </select>
-                    <label for="buscar">buscar</label>
-                    <input type="text" name="buscar" id="buscar" placeholder="buscar" >
-                    <button type="submit">buscar</button>
+                    <button type="submit" name="botonb" >buscar</button>
                 </form>
             </div>
         </div>

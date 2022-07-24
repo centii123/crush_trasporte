@@ -99,7 +99,7 @@ include('encabezado/encabezado.php');
         </div>
     </section><br>
     <div class="oferta2">
-        <a href="catalogo.html" class="resultado2">Ver mas</a>
+        <a href="catalogo.php" class="resultado2">Ver mas</a>
     </div>
     </div><br><br>
     <div>

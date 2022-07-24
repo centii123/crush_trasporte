@@ -1,5 +1,5 @@
 <?php
-
+require_once "../modelo/validacion.php";
 if(isset($_POST['ingresar'])){
         $usuario=$_POST ['usuario'];
 
@@ -8,9 +8,12 @@ if(isset($_POST['ingresar'])){
         $conexion=new validacion;
 
         $comprobacion=$conexion->Inicio_sesion($usuario,$contraseña);
+        
 
-        if($comprobacion['correo']== $usuario && $comprobacion['contrasena'] == $contraseña && $comprobacion['tipo']==1)
-        {
+
+        if(!$comprobacion){
+            echo 'usuario incorrecto';
+        }else if($comprobacion['correo']== $usuario && $comprobacion['contrasena'] == $contraseña && $comprobacion['tipo']==1){
 
             header('location:https://www.google.com.mx/');
 
@@ -19,8 +22,6 @@ if(isset($_POST['ingresar'])){
 
             header('location:https://www.youtube.com/');
 
-        }else{
-            echo 'usuario incorrecto';
         }
 }
 

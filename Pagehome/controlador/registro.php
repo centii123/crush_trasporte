@@ -1,4 +1,5 @@
 <?php
+require_once "../modelo/validacion.php";
 if(isset($_POST['registrar'])){
 
     $nombres=$_POST['nombres'];

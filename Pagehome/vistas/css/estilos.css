@@ -353,6 +353,7 @@ h2{
     font-family: 'lato';
     display: flex;
     text-align: center;
+    flex-wrap: wrap;
 }
 .precio{
     font-size: 40px;

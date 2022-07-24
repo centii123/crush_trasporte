@@ -28,16 +28,20 @@ $Mostrar=new Mostrar();
                 <form action="" method="post" >  
                     <label for="estado">Estado</label>
                         <select name="estado" id="estado">
-                            <option value=""></option> 
-                            <option value="34">hola2</option>
+                        <option value="">---estados</option>
+                        <option value="1">Activo</option> 
+                        <option value="2">Inactivo</option> 
                         </select>                 
                     <label for="role">role</label>
                         <select name="role" id="role">
-                            <option value=""></option> 
-                            <option value="34">hola2</option>
+                            <option value="">--roles</option> 
+                            <?php
+                                echo $Mostrar->role()
+                            ?>
                         </select>
                     <label for="cedula">cedula</label>
                     <input type="number" name="cedula" id="cedula" placeholder="cedula" >
+                    <button type="submit">Buscar</button>
                 </form>
             </div>
         </div>
@@ -55,7 +59,7 @@ $Mostrar=new Mostrar();
                     <th>cambiarEstado</th>
                 </tr>
                 <?php
-                echo verPersonal();
+                    echo Personalver();
                 ?>
             </table>
         </div>

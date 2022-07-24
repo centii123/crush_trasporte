@@ -51,7 +51,7 @@ CREATE TABLE buses (
 );
 
 CREATE TABLE empleados (
-  cedulaE BIGINT PRIMARY KEY NOT NULL,
+  cedulaE VARCHAR(11) PRIMARY KEY NOT NULL,
   nombres VARCHAR(100) NOT NULL,
   apellidos VARCHAR(100) NOT NULL,
   estados INTEGER NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE empleados (
 
 CREATE TABLE viajes_Empleados (
   VEid SERIAL PRIMARY KEY NOT NULL,
-  cedulaE INTEGER,
+  cedulaE VARCHAR(11),
   viajesid INTEGER
 );
 
@@ -94,6 +94,8 @@ ALTER TABLE empleados ADD FOREIGN KEY (rolesid) REFERENCES roles (rolesid);
 ALTER TABLE viajes_Empleados ADD FOREIGN KEY (cedulaE) REFERENCES empleados (cedulaE);
 
 ALTER TABLE viajes_Empleados ADD FOREIGN KEY (viajesid) REFERENCES viajes (viajesid);
+
+
 
 --ROLES
 INSERT INTO roles(descripcion) VALUES ('Conductor'),('Oficial');

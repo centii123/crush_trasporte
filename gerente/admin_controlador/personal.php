@@ -3,7 +3,7 @@ include_once('../admin_modelo/baseDatos.php');
 $Mostrar=new Mostrar();
 if(isset($_POST['boton'])){
     $estado=intval($_POST['estado']);
-    $cedula=intval($_POST['cedula']);
+    $cedula=$_POST['cedula'];
     $nombres=$_POST['nombres'];
     $apellidos=$_POST['apellidos'];
     $role=intval($_POST['role']);

@@ -35,7 +35,7 @@ include_once('../admin_controlador/bus.php')
                         <select name="estado" id="estado" >
                             <option value="">--estado</option> 
                             <option value="1">Activo</option>
-                            <option value="0">Inactivo</option>
+                            <option value="2">Inactivo</option>
                         </select>             
                         <label for="placa">placa</label>
                         <input type="text" name="placa" id="placa" placeholder="placa" >

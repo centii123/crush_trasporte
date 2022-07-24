@@ -43,6 +43,12 @@ if(document.querySelector('#cedula')){
     document.querySelector('#provincias').addEventListener('keyup',(a)=>{
         let valor2=a.target.value;
         console.log(valor2);
+        let valores=new FormData()
+        valores.append('buscar',valor2)
+        fetch('adminViajesgestionar.php',{
+            method:'Post',
+            body:valores
+        })
     })
 }else if(document.querySelector('#placa')){
     document.querySelector('#placa').addEventListener('keyup',(a)=>{

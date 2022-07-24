@@ -1,6 +1,7 @@
 <?php
 include_once('encabezado/admincabeza.php');
 $Mostrar=new Mostrar();
+
 ?>
 </head>
 
@@ -29,17 +30,19 @@ $Mostrar=new Mostrar();
             <hr>
             <div class="flex">
             <div class="busqueda">               
-                <form action="" method="post" >                   
+                <form action="adminViajesgestionar.php" method="POST" >                   
                         <label for="estado">estado</label>
                         <select name="estado" id="estado" value="3">
-                            <option value="1">activo</option>
-                            <option value="2" selected >activo1</option>  
-                            <option value="3">activo2</option>  
-                            <option value="4">activo3</option>  
-                            <option value="5">activo4</option>                             
+                        <option value="">---estados</option> 
+                        <?php
+
+                            echo $Mostrar->estados();
+
+                        ?>                             
                         </select>
                         <label for="provincia">provincia</label>
                         <input type="text" name="provincia" id="provincias" placeholder="provincia">
+                        <button type="submit">Buscar</button>
                 </form>
             </div>
         </div>

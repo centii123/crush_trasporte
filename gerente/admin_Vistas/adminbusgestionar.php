@@ -28,11 +28,13 @@ $Mostrar=new Mostrar();
                 <form action="" method="post" >  
                     <label for="estado">estado</label>
                         <select name="estado" id="estado">
-                            <option value="">activo</option> 
-                            <option value="34">hola2</option>
+                        <option value="">---estados</option>
+                        <option value="1">Activo</option> 
+                        <option value="0">Inactivo</option> 
                         </select>                 
                     <label for="placa">placa</label>
                     <input type="text" name="placa" id="placa" placeholder="placa" >
+                    <button type="submit">Buscar</button>
                 </form>
             </div>
         </div>

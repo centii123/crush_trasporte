@@ -31,8 +31,10 @@ include_once('../admin_controlador/viaje.php')
                     <form action="adminViajesagregar.php" method="post" enctype="multipart/form-data">
                         <label for="estado">Estado</label>
                         <select name="estado" id="estado" >
-                            <option value="1">Activo</option> <!--values es el valor que envias en php-->
-                            <option value="0">Inactivo</option>
+                            <option value="">---estados</option> <!--values es el valor que envias en php-->
+                            <?php
+                                echo $Mostrar->estados();
+                            ?>
                         </select>
                         <label for="provS">provincia de salida</label>
                         <select name="provS" id="provS" >
@@ -50,8 +52,8 @@ include_once('../admin_controlador/viaje.php')
                         </select>
                         <label for="fecha">fecha y hora del viaje</label>
                         <input type="datetime-local" name="fecha" id="fecha" >
-                        <label for="fecha">Costo del viaje</label>
-                        <input type="number" name="fecha" id="fecha" >
+                        <label for="costo">Costo del viaje</label>
+                        <input type="number" name="costo" id="costo" >
                         <label for="bus">bus</label>
                         <select name="bus" id="bus" >
                             <option value="">--bus</option>
@@ -59,22 +61,22 @@ include_once('../admin_controlador/viaje.php')
                                 echo $Mostrar->bus()
                             ?>
                         </select>
-                        <label for="bus">chofer</label>
-                        <select name="bus" id="bus" >
+                        <label for="chofer">chofer</label>
+                        <select name="chofer" id="chofer" >
                             <option value="">--chofer</option>
                             <?php
                                 echo $Mostrar->chofer()
                             ?>
                         </select>  
-                        <label for="bus">oficial</label>
-                        <select name="bus" id="bus" >
+                        <label for="oficial">oficial</label>
+                        <select name="oficial" id="oficial" >
                             <option value="">--oficial</option>
                             <?php
                                 echo $Mostrar->oficial()
                             ?>
                         </select>                        
                         <label for="img">Foto del viaje</label>
-                        <input type="file" name="" id="img" >
+                        <input type="file" name="img" id="img" >
                         <button type="submit" name="boton">Registrarse</button>
                     </form>
                 </div>

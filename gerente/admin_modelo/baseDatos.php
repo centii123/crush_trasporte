@@ -17,9 +17,9 @@ class Conexion{
 }
 
 class Mostrar extends Conexion{
-    public $por_pagina=10;
-    public $consulta;
-    public $query;
+    private $por_pagina=10;
+    private $consulta;
+    private $query;
     public $row;
 
     public function mostrarBuses($desde){
@@ -35,8 +35,8 @@ class Mostrar extends Conexion{
         return $this->row;
     }
 
-    public function mostrarpersonal($desde){
-        $this->consulta="SELECT * FROM empleados ORDER BY rolesid LIMIT $this->por_pagina OFFSET $desde";
+    public function mostrarpersonal($cedula,$estado,$role,$desde){
+        $this->consulta="SELECT em.cedulae,em.nombres,em.apellidos,em.estados, em.imagenempleado,ro.descripcion rolesid FROM empleados em INNER JOIN roles ro on em.rolesid=ro.rolesid WHERE em.cedulae LIKE '%$cedula%' OR em.estados = $estado OR em.rolesid = $role ORDER BY rolesid LIMIT $this->por_pagina OFFSET $desde";
         $this->query=pg_query($this->conex,$this->consulta);
         return $this->query;
     }
@@ -48,8 +48,10 @@ class Mostrar extends Conexion{
         return $this->row;
     }
 
-    public function mostrarviajes($desde){
-        $this->consulta="SELECT * FROM viajes ORDER BY fechaviaje LIMIT $this->por_pagina OFFSET $desde";
+    public function mostrarviajes($busca,$estado,$desde){
+
+        $this->consulta="SELECT viajes.viajesid,viajes.fotoviaje,viajes.fechaviaje,viajes.costoviaje,viajes.placab, estados.descripcion estadosid,salida.descripcion provinciasalida,llegada.descripcion provinciallegada FROM viajes INNER JOIN provincia salida ON salida.provinciaid=viajes.provinciasalida INNER JOIN provincia llegada ON llegada.provinciaid=viajes.provinciallegada INNER JOIN estados ON viajes.estadosid=estados.estadosid WHERE  salida.descripcion LIKE '%$busca%' OR llegada.descripcion like '%$busca%' OR viajes.estadosid = $estado ORDER BY fechaviaje LIMIT $this->por_pagina OFFSET $desde";
+        //WHERE estados.descripcion = 'Activo'
         $this->query=pg_query($this->conex,$this->consulta);
         return $this->query;
     }
@@ -107,10 +109,20 @@ class Mostrar extends Conexion{
             <?php
         }
     }
+
+    public function estados(){
+        $this->consulta="SELECT * FROM estados";
+        $this->query= pg_query($this->conex,$this->consulta);
+        while($this->row=pg_fetch_array($this->query)){
+            ?>
+            <option value="<?php echo $this->row['estadosid'] ?>"><?php echo $this->row['descripcion']?></option>
+            <?php
+        }
+    }
 }
 
 class Insertar extends Conexion{
-    public $consulta;
+    private $consulta;
     public $query;
 
     public function busI($id,$modelo,$asientos,$imagen,$estado){
@@ -121,29 +133,39 @@ class Insertar extends Conexion{
     }
 
     public function personalI($cedula,$nombres,$apellidos,$estado,$imagen,$role){
-        $this->consulta= "INSERT INTO empleados VALUES ($cedula,'$nombres','$apellidos',$estado,'$imagen',$role)";
+        $this->consulta= "INSERT INTO empleados VALUES ('$cedula','$nombres','$apellidos',$estado,'$imagen',$role)";
         $this->query= pg_query($this->conex, $this->consulta);
         return $this->query;
     }
 
-    public function viajeI($imagen,$fechaviaje,$costo,$salida,$llegada,$bus,$estadosid,$chofer,$conductor){
+    public function viajeI($imagen,$fechaviaje,$costo,$salida,$llegada,$bus,$estadosid,$chofer,$oficial){
         $this->consulta= "INSERT INTO viajes(fotoviaje,fechaviaje,costoviaje,provinciasalida,provinciallegada,placab,estadosid) VALUES ('$imagen','$fechaviaje',$costo,$salida,$llegada,'$bus',$estadosid)";
         $this->query= pg_query($this->conex, $this->consulta);
 
         if($this->query){
-            $viaje=pg_last_oid($this->query);
-            $this->consulta="INSERT INTO viajes(cedulae,viajesid) VALUES ('$imagen','$fechaviaje',$costo,$salida,$llegada,'$bus',$estadosid)";
+            $numeros="SELECT MAX(viajesid) FROM viajes";
+            $query=pg_query($this->conex,$numeros);
+            $idviajearr=pg_fetch_array($query);
+            $idV=intval($idviajearr['max']) ;
+
+            if($query){
+                $ingresar="INSERT INTO viajes_empleados(cedulae,viajesid) VALUES ($chofer,$idV)";
+                $query1=pg_query($this->conex,$ingresar);
+
+                if($query1){
+                    $ingresar="INSERT INTO viajes_empleados(cedulae,viajesid) VALUES ($oficial,$idV)";
+                    $query1=pg_query($this->conex,$ingresar);
+                }
+
+            }
+
+            
+            
         }
 
-        return $viaje;
+        
     }
 
-    public function prueba(){
-        $this->consulta= "INSERT INTO  VALUES ";
-        $this->query= pg_query($this->conex, $this->consulta);
-        $viaje=pg_last_oid($this->query);
-        print_r($viaje);
-    }
 }
 
 

@@ -31,8 +31,9 @@ include_once('../admin_controlador/personal.php')
                     <form action="adminpersonalagregar.php" method="post" enctype="multipart/form-data">
                         <label for="estado">Estado</label>
                         <select name="estado" id="estado" >
+                            <option value="">--estado</option> 
                             <option value="1">Activo</option> <!--values es el valor que envias en php-->
-                            <option value="0">Inactivo</option>
+                            <option value="2">Inactivo</option>
                         </select>
                         <label for="nombre">cedula</label>
                         <input type="number" name="cedula" id="nombre" placeholder="nombre" >

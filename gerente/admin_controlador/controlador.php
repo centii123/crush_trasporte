@@ -1,5 +1,5 @@
 <?php  
-include_once('../admin_modelo/baseDatos.php');
+include_once('../admin_modelo/Mostrar.php');
 
 //buses
 function verBuses(){
@@ -9,11 +9,29 @@ function verBuses(){
         $pagina=1;
     }
 
+    if(isset($_POST['estado'])){
+        $estado=intval($_POST['estado']);
+    }else{
+        $estado=1;
+    }
+
+    if(isset($_POST['placa'])){
+        if(strlen($_POST['placa'])>=1){
+            $placa=$_POST['placa'];
+        }else{
+            $placa='?';
+        }
+        
+    }else{
+        $placa='';
+    }
+    
+    
+
     $porpagina=10;
     $formula=($pagina-1)*$porpagina;
     $Mostrar= new Mostrar();
-    $fila=$Mostrar->mostrarBuses($formula);
-
+    $fila=$Mostrar->mostrarBuses($estado,$placa,$formula);
     while($row=pg_fetch_array($fila)){
         ?>
             <tr>
@@ -26,13 +44,13 @@ function verBuses(){
                         ?>
                         <td>activo</td>
                         <td ><button class="boton"><a href="adminVuelosedit.php"><box-icon type='solid' name='edit'></box-icon></a></button></td>
-                        <td><button class="boton" onclick="return desactivar()" ><a href="https://www.youtube.com/results?search_query=no+se+ejecuta+javascript+en+php">desactivar</a></button></td>
+                        <td><button class="boton" onclick="return desactivar()" ><a href="../admin_controlador/actualizar.php?bus=<?php echo $row['placab']?>&estado=<?php echo $row['estado'] ?>">desactivar</a></button></td>
                         <?php
-                    }else if($row['estado']==0){
+                    }else if($row['estado']==2){
                         ?>
                         <td>inactivo</td>
                         <td ><button class="boton"><a href="adminVuelosedit.php"><box-icon type='solid' name='edit'></box-icon></a></button></td>
-                        <td><button class="boton" onclick="return activar()" ><a href="https://www.youtube.com/results?search_query=no+se+ejecuta+javascript+en+php">activar</a></button></td>
+                        <td><button class="boton" onclick="return activar()" ><a href="../admin_controlador/actualizar.php?bus=<?php echo $row['placab']?>&estado=<?php echo $row['estado'] ?>">activar</a></button></td>
                         <?php
                     }
                     ?>
@@ -59,13 +77,13 @@ function Personalver(){
             $cedula="?";
         }
     }else{
-        $cedula="?";
+        $cedula="";
     }
 
     if(isset($_POST['estado'])){
         $estado=intval($_POST['estado']);
     }else{
-        $estado=1;
+        $estado=0;
     }
 
     if(isset($_POST['role'])){
@@ -90,14 +108,14 @@ function Personalver(){
                     if($row['estados']==1){
                         ?>
                         <td>activo</td>
-                        <td ><button class="boton"><a href="adminVuelosedit.php"><box-icon type='solid' name='edit'></box-icon></a></button></td>
-                        <td><button class="boton" onclick="return desactivar()" ><a href="https://www.youtube.com/results?search_query=no+se+ejecuta+javascript+en+php">desactivar</a></button></td>
+                        <td ><button class="boton"><a href="adminpersonaledit.php?edit=<?php echo $row['cedulae']  ?>"><box-icon type='solid' name='edit'></box-icon></a></button></td>
+                        <td><button class="boton" onclick="return desactivar()" ><a href="../admin_controlador/actualizar.php?personal=<?php echo $row['cedulae']; ?>&estado=<?php echo $row['estados']?>">desactivar</a></button></td>
                         <?php
                     }else if($row['estados']==2){
                         ?>
                         <td>inactivo</td>
-                        <td ><button class="boton"><a href="adminVuelosedit.php"><box-icon type='solid' name='edit'></box-icon></a></button></td>
-                        <td><button class="boton" onclick="return desactivar()" ><a href="https://www.youtube.com/results?search_query=no+se+ejecuta+javascript+en+php">activar</a></button></td>
+                        <td ><button class="boton"><a href="adminpersonaledit.php?edit=<?php echo $row['cedulae']  ?>"><box-icon type='solid' name='edit'></box-icon></a></button></td>
+                        <td><button class="boton" onclick="return desactivar()" ><a href="../admin_controlador/actualizar.php?personal=<?php echo $row['cedulae'] ?>&estado=<?php echo $row['estados'] ?>">activar</a></button></td>
                         <?php
                     }
                     ?>
@@ -148,7 +166,6 @@ function mostrarviaje(){
                 <td><?php echo $row['placab']?></td>
                 <td><?php echo $row['estadosid']?></td>
                 <td ><button class="boton"><a href="adminVuelosedit.php"><box-icon type='solid' name='edit'></box-icon></a></button></td>
-                <td><button class="boton" onclick="return desactivar()" ><a href="https://www.youtube.com/results?search_query=no+se+ejecuta+javascript+en+php">desactivar</a></button></td>
                     
             </tr>
         <?php

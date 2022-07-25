@@ -1,4 +1,5 @@
 <?php
+include('../admin_controlador/controlador.php');
 include_once('encabezado/admincabeza.php');
 $Mostrar=new Mostrar();
 ?>
@@ -31,7 +32,7 @@ $Mostrar=new Mostrar();
                         <option value="">---estados</option>
                         <option value="1">Activo</option> 
                         <option value="2">Inactivo</option> 
-                        </select>                 
+                        </select>
                     <label for="role">role</label>
                         <select name="role" id="role">
                             <option value="">--roles</option> 

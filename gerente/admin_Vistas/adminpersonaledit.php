@@ -1,5 +1,6 @@
 <?php
 include_once('encabezado/admincabeza.php');
+
 ?>
     <div class="contenedor">
         <div class="nav">
@@ -22,37 +23,19 @@ include_once('encabezado/admincabeza.php');
                 <h1>EDITAR PERSONAL</h1>
             </div>
             <div class="center">
-            <div class="registroadmin">
+                <div class="registroadmin">
                     <div class="center">
-                        <h3>Editar personal</h3>
+                        <h3>Registrar personal</h3>
                     </div>
-                    <form action="" method="post" enctype="multipart/form-data">
-                        <label for="estado">Estados</label>
-                        <select name="estado" id="estado">
-                            <option value="1">Activo</option> <!--values es el valor que envias en php-->
-                            <option value="0">Inactivo</option>
-                        </select>
-                        <label for="nombre">cedula</label>
-                        <input type="number" name="nombre" id="nombre" placeholder="nombre">
-                        <label for="nombre">nombres</label>
-                        <input type="text" name="nombre" id="nombre" placeholder="nombre">
-                        <label for="apellido">apellidos</label>
-                        <input type="text" name="apellido" id="apellido" placeholder="apellido">
-                        <label for="role">role</label>
-                        <select name="role" id="role">
-                            <option value="">--role</option> <!--values es el valor que envias en php-->
-                            <?php
-                            echo $mostrar->role();
-                            ?>
-                        </select>
-                        <label for="img">Foto del empleado</label>
-                        <input type="file" name="" id="img">   
-                        <button type="submit">Registrar</button>
-                    </form>
+                    
+                    <?php
+                    include('../admin_controlador/actualizartodo.php');
+                    ?>
+
                 </div>
             </div>
         </div>
     </div>
-    <?php
+<?php
 include('pie/pie.php');
 ?>

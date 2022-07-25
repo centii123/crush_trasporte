@@ -19,29 +19,29 @@ include_once('encabezado/admincabeza.php');
         </div>
         <div class="contenido">
             <div class="titulo">
-                <h1>EDITAR BUS</h1>
+                <h1>AGREGAR BUS</h1>
             </div>
             <div class="center">
-            <div class="registroadmin">
+                <div class="registroadmin">
                     <div class="center">
-                        <h3>Editar bus</h3>
+                        <h3>Registrar bus</h3>
                     </div>
-                    <form action="pruebas.php" method="post" enctype="multipart/form-data">
+                    <form action="adminbusagregar.php" method="POST" enctype="multipart/form-data">
                         <label for="estado">Estado</label>
-                        <select name="estado" id="estado">
+                        <select name="estado" id="estado" >
                             <option value="">--estado</option> 
                             <option value="1">Activo</option>
-                            <option value="0">Inactivo</option>
+                            <option value="2">Inactivo</option>
                         </select>             
-                        <label for="nombre">placa</label>
-                        <input type="text" name="adminnombre" id="nombre" placeholder="placa">
-                        <label for="contraseña">modelo</label>
-                        <input type="text" name="modelo" id="contraseña" placeholder="modelo">
+                        <label for="placa">placa</label>
+                        <input type="text" name="placa" id="placa" placeholder="placa" >
+                        <label for="modelo">modelo</label>
+                        <input type="text" name="modelo" id="modelo" placeholder="modelo" >
                         <label for="asientos">Numero de asientos</label>
-                        <input type="number" name="asientos" id="asientos" placeholder="Numero de asientos">
+                        <input type="number" name="asientos" id="asientos" placeholder="Numero de asientos" >
                         <label for="img">imagen del Bus</label>
-                        <input type="file" name="imagen" id="img">
-                        <button type="submit">Registrar</button>
+                        <input type="file" name="img" id="img" >
+                        <button type="submit" name="boton">Registrar</button>
                     </form>
                 </div>
             </div>

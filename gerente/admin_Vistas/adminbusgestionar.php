@@ -1,4 +1,5 @@
 <?php
+include('../admin_controlador/controlador.php');
 include_once('encabezado/admincabeza.php');
 $Mostrar=new Mostrar();
 ?>
@@ -30,7 +31,7 @@ $Mostrar=new Mostrar();
                         <select name="estado" id="estado">
                         <option value="">---estados</option>
                         <option value="1">Activo</option> 
-                        <option value="0">Inactivo</option> 
+                        <option value="2">Inactivo</option> 
                         </select>                 
                     <label for="placa">placa</label>
                     <input type="text" name="placa" id="placa" placeholder="placa" >

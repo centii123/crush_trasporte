@@ -1,7 +1,6 @@
 <?php
 session_start();
 $_SESSION['usuario']='Blanca Elvia Yela Yela';
-include('../admin_controlador/controlador.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

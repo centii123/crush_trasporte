@@ -1,4 +1,5 @@
 <?php
+include('../admin_controlador/controlador.php');
 include_once('encabezado/admincabeza.php');
 $Mostrar=new Mostrar();
 
@@ -59,7 +60,6 @@ $Mostrar=new Mostrar();
                     <th>bus</th>
                     <th>estado</th>
                     <th>editar</th>
-                    <th>cambiarEstado</th>
                 </tr>
                 <?php
                     echo mostrarviaje();

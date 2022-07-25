@@ -1,5 +1,5 @@
 <?php  
-include_once('../admin_modelo/baseDatos.php');
+include_once('../admin_modelo/Insertar.php');
 $Mostrar=new Mostrar();
 if(isset($_POST['boton'])){
     $estado=intval($_POST['estado']);

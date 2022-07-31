@@ -25,8 +25,6 @@ function verBuses(){
     }else{
         $placa='';
     }
-    
-    
 
     $porpagina=10;
     $formula=($pagina-1)*$porpagina;
@@ -43,14 +41,14 @@ function verBuses(){
                     if($row['estado']==1){
                         ?>
                         <td>activo</td>
-                        <td ><button class="boton"><a href="adminVuelosedit.php"><box-icon type='solid' name='edit'></box-icon></a></button></td>
-                        <td><button class="boton" onclick="return desactivar()" ><a href="../admin_controlador/actualizar.php?bus=<?php echo $row['placab']?>&estado=<?php echo $row['estado'] ?>">desactivar</a></button></td>
+                        <td ><button class="boton"><a href="adminbusedit.php?idbus=<?php echo $row["placab"] ?>"><box-icon type='solid' name='edit'></box-icon></a></button></td>
+                        <td><button class="boton" onclick="return activar()" ><a href="../admin_controlador/actualizar.php?bus=<?php echo $row['placab']?>&estado=<?php echo $row['estado'] ?>">desactivar</a></button></td>
                         <?php
                     }else if($row['estado']==2){
                         ?>
                         <td>inactivo</td>
-                        <td ><button class="boton"><a href="adminVuelosedit.php"><box-icon type='solid' name='edit'></box-icon></a></button></td>
-                        <td><button class="boton" onclick="return activar()" ><a href="../admin_controlador/actualizar.php?bus=<?php echo $row['placab']?>&estado=<?php echo $row['estado'] ?>">activar</a></button></td>
+                        <td ><button class="boton"><a href="adminbusedit.php?idbus=<?php echo $row["placab"] ?>"><box-icon type='solid' name='edit'></box-icon></a></button></td>
+                        <td><button class="boton" onclick="return desactivar()" ><a href="../admin_controlador/actualizar.php?bus=<?php echo $row['placab']?>&estado=<?php echo $row['estado'] ?>">activar</a></button></td>
                         <?php
                     }
                     ?>
@@ -109,7 +107,7 @@ function Personalver(){
                         ?>
                         <td>activo</td>
                         <td ><button class="boton"><a href="adminpersonaledit.php?edit=<?php echo $row['cedulae']  ?>"><box-icon type='solid' name='edit'></box-icon></a></button></td>
-                        <td><button class="boton" onclick="return desactivar()" ><a href="../admin_controlador/actualizar.php?personal=<?php echo $row['cedulae']; ?>&estado=<?php echo $row['estados']?>">desactivar</a></button></td>
+                        <td><button class="boton" onclick="return activar()" ><a href="../admin_controlador/actualizar.php?personal=<?php echo $row['cedulae']; ?>&estado=<?php echo $row['estados']?>">desactivar</a></button></td>
                         <?php
                     }else if($row['estados']==2){
                         ?>
@@ -165,12 +163,11 @@ function mostrarviaje(){
                 <td><?php echo $row['costoviaje']?> $</td>
                 <td><?php echo $row['placab']?></td>
                 <td><?php echo $row['estadosid']?></td>
-                <td ><button class="boton"><a href="adminVuelosedit.php"><box-icon type='solid' name='edit'></box-icon></a></button></td>
+                <td ><button class="boton"><a href="adminViajesedit.php?viajesid=<?php echo $row['viajesid']  ?>"><box-icon type='solid' name='edit'></box-icon></a></button></td>
                     
             </tr>
         <?php
     }
-
 }
 
 

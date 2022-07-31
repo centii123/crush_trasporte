@@ -34,6 +34,8 @@ class Mostrar extends Conexion{
     }
 
     public function mostrarviajes($busca,$estado,$desde){
+        /*$this->consulta="SELECT ve.veid,ve.cedulae cedulave, ve.viajesid viajeidve,v.viajesid,v.fotoviaje,v.fechaviaje,v.costoviaje,v.provinciasalida,salida.descripcion salida,v.provinciallegada, llegada.descripcion llegada,v.placab,v.estadosid,es.descripcion estadoviajedes,em.cedulae cedulaem,em.nombres nombreem,em.apellidos apellidosem FROM viajes_empleados ve INNER JOIN viajes v ON ve.viajesid=v.viajesid INNER JOIN provincia salida ON v.provinciasalida=salida.provinciaid INNER JOIN provincia llegada ON v.provinciallegada=llegada.provinciaid INNER JOIN estados es ON v.estadosid=es.estadosid INNER JOIN empleados em ON ve.cedulae=em.cedulae WHERE  salida.descripcion LIKE '%$busca%' OR llegada.descripcion like '%$busca%' OR v.estadosid in ($estado,3) ORDER BY v.estadosid desc LIMIT $this->por_pagina OFFSET $desde";*/
+
         $this->consulta="SELECT viajes.viajesid,viajes.fotoviaje,viajes.fechaviaje,viajes.costoviaje,viajes.placab, estados.descripcion estadosid,salida.descripcion provinciasalida,llegada.descripcion provinciallegada FROM viajes INNER JOIN provincia salida ON salida.provinciaid=viajes.provinciasalida INNER JOIN provincia llegada ON llegada.provinciaid=viajes.provinciallegada INNER JOIN estados ON viajes.estadosid=estados.estadosid WHERE  salida.descripcion LIKE '%$busca%' OR llegada.descripcion like '%$busca%' OR viajes.estadosid in ($estado,3) ORDER BY viajes.estadosid desc LIMIT $this->por_pagina OFFSET $desde";
         //WHERE estados.descripcion = 'Activo'
         $this->query=pg_query($this->conex,$this->consulta);

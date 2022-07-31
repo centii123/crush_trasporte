@@ -3,6 +3,7 @@ include('../admin_controlador/controlador.php');
 include_once('encabezado/admincabeza.php');
 $Mostrar=new Mostrar();
 ?>
+
     <div class="contenedor">
         <div class="nav">
         <div class="navega">

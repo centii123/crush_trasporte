@@ -34,13 +34,6 @@ function despliegue(){
 }
 
 
-    
-
-
-
-    
-
-
 
 
 

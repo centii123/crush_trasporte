@@ -9,7 +9,6 @@ class Insertar extends Conexion{
     public function busI($id,$modelo,$asientos,$imagen,$estado){
         $this->consulta= "INSERT INTO buses VALUES ('$id','$modelo',$asientos,'$imagen',$estado)";
         $this->query= pg_query($this->conex, $this->consulta);
-        
         return $this->query;
     }
 

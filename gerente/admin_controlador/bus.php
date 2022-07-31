@@ -41,15 +41,6 @@ if(isset($_POST['boton'])){
             </script>
     <?php
     }
-
-    
-
-
-
-
-
-
-    
 }
 ?>
 

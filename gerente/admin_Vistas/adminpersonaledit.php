@@ -1,3 +1,4 @@
+<div id="espacioA"></div>
 <?php
 include_once('encabezado/admincabeza.php');
 
@@ -25,11 +26,11 @@ include_once('encabezado/admincabeza.php');
             <div class="center">
                 <div class="registroadmin">
                     <div class="center">
-                        <h3>Registrar personal</h3>
+                        <h3>editar personal</h3>
                     </div>
                     
                     <?php
-                    include('../admin_controlador/actualizartodo.php');
+                    include('../admin_controlador/actualizarpersonal.php');
                     ?>
 
                 </div>

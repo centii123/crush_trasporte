@@ -1,3 +1,4 @@
+<div id="espacioA"></div>
 <?php
 include_once('encabezado/admincabeza.php');
 ?>
@@ -19,45 +20,17 @@ include_once('encabezado/admincabeza.php');
         </div>
         <div class="contenido">
             <div class="titulo">
-                <h1>AGREGAR VUELOS</h1>
+                <h1>EDITAR VIAJE</h1>
             </div>
             <div class="center">
             <div class="registroadmin">
                     <div class="center">
                         <h3>Registrar viaje</h3>
                     </div>
-                    <form action="pruebas.php" method="post" enctype="multipart/form-data">
-                        <label for="estado">Estados</label>
-                        <select name="estado" id="estado">
-                            <option value="1">Activo</option> <!--values es el valor que envias en php-->
-                            <option value="0">Inactivo</option>
-                        </select>
-                        <label for="provS">provincia de salida</label>
-                        <select name="provS" id="provS">
-                            <option value="">--provincia--</option> 
-                            <?php
-                            echo $mostrar->mostrarProvincias();
-                            ?>
-                        </select>
-                        <label for="provLL">provincia de llegada</label>
-                        <select name="provLL" id="provLL">
-                            <option value="">--provincia--</option>
-                            <?php
-                            echo $mostrar->mostrarProvincias();
-                            ?>
-                        </select>
-                        <label for="fecha">fecha y hora del viaje</label>
-                        <input type="datetime-local" name="fecha" id="fecha">
-                        <label for="fecha">Costo del viaje</label>
-                        <input type="number" name="fecha" id="fecha">
-                        <label for="bus">bus</label>
-                        <select name="bus" id="bus">
-                            <option value="">--pais--</option>
-                        </select>                      
-                        <label for="img">Foto del viaje</label>
-                        <input type="file" name="" id="img">
-                        <button type="submit">Registrarse</button>
-                    </form>
+                    <?php
+                        include "../admin_controlador/actualizarviajes.php";
+                    ?>
+                    <!--mas-->
                 </div>
             </div>
         </div>

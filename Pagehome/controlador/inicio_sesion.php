@@ -15,7 +15,7 @@ if(isset($_POST['ingresar'])){
             echo 'usuario incorrecto';
         }else if($comprobacion['correo']== $usuario && $comprobacion['contrasena'] == $contraseña && $comprobacion['tipo']==1){
 
-            header('location:https://www.google.com.mx/');
+            header('location:../../cliente/vista');
 
         }else if($comprobacion['correo']== $usuario && $comprobacion['contrasena'] == $contraseña && $comprobacion['tipo']==0)
         {

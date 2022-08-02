@@ -1,7 +1,8 @@
 <div id="espacioA"></div>
 <?php
+include('../admin_controlador/controlador.php');
 include_once('encabezado/admincabeza.php');
-include_once('../admin_controlador/bus.php')
+include_once('../admin_controlador/bus.php');
 ?>
 
     <div class="contenedor">

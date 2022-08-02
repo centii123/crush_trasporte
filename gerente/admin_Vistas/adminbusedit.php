@@ -1,3 +1,4 @@
+<div id="espacioA"></div>
 <?php
 include_once('encabezado/admincabeza.php');
 ?>
@@ -19,30 +20,19 @@ include_once('encabezado/admincabeza.php');
         </div>
         <div class="contenido">
             <div class="titulo">
-                <h1>EDITAR BUS</h1>
+                <h1>ACTUALIZAR BUS</h1>
             </div>
             <div class="center">
-            <div class="registroadmin">
+                <div class="registroadmin">
                     <div class="center">
-                        <h3>Editar bus</h3>
+                        <h3>actualizar bus</h3>
                     </div>
-                    <form action="pruebas.php" method="post" enctype="multipart/form-data">
-                        <label for="estado">Estado</label>
-                        <select name="estado" id="estado">
-                            <option value="">--estado</option> 
-                            <option value="1">Activo</option>
-                            <option value="0">Inactivo</option>
-                        </select>             
-                        <label for="nombre">placa</label>
-                        <input type="text" name="adminnombre" id="nombre" placeholder="placa">
-                        <label for="contraseña">modelo</label>
-                        <input type="text" name="modelo" id="contraseña" placeholder="modelo">
-                        <label for="asientos">Numero de asientos</label>
-                        <input type="number" name="asientos" id="asientos" placeholder="Numero de asientos">
-                        <label for="img">imagen del Bus</label>
-                        <input type="file" name="imagen" id="img">
-                        <button type="submit">Registrar</button>
-                    </form>
+                    
+                        <?php
+                            include "../admin_controlador/actualizarbus.php";
+                        ?>
+                        <!--form-->
+
                 </div>
             </div>
         </div>

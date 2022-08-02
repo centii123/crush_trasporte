@@ -1,7 +1,6 @@
 <?php
 session_start();
-$_SESSION['usuario']='Blanca Elvia Yela Yela';
-include('../admin_controlador/controlador.php');
+$_SESSION['usuario']='Enrique Sebastian Mera Yela';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,10 +21,9 @@ include('../admin_controlador/controlador.php');
           <a href="admin.php"><div class="logo"><img src="iconos/logo.png" alt="" width="110px" height="45px" style="margin-top:7px ;"><h3> CRUSH live transport</h3></div></a>
           <div class="usuario"><div><div id="boton"><p><b><?php echo $_SESSION['usuario'] ?></b> </p> <img src="iconos/chevron-down.svg" alt="" width="20px" ></div> 
           <br>
-              <form action="2.php" method="get" class="desplegableusuario" id="desplegableusuario">
+              <form action="../admin_controlador/cerrarsession.php" method="get" class="desplegableusuario" id="desplegableusuario">
 
                    
-                   <button type="submit" class="botonCerrarSesion"><box-icon type='solid' name='file-blank'></box-icon> Informe</button>
                    <button type="submit" class="botonCerrarSesion"><box-icon name='exit' type='solid' ></box-icon> Cerrar session</button>
                   
               </form>

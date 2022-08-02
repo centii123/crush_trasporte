@@ -10,7 +10,7 @@ function alerta(){
 
 
 function desactivar(){
-    let confirmar=confirm('¿Esta seguro que desea cambiar el estado a desactivado?')
+    let confirmar=confirm('¿Esta seguro que desea activar?')
     if(confirmar==true){
         return true
     }else{
@@ -18,7 +18,7 @@ function desactivar(){
     }
 }
 function activar(){
-    let confirmar=confirm('¿Esta seguro que desea cambiar el estado a activado?')
+    let confirmar=confirm('¿Esta seguro que desea desactivar?')
     if(confirmar==true){
         return true
     }else{
@@ -32,35 +32,6 @@ function despliegue(){
     let desplegable=document.querySelector('#desplegableusuario');
     desplegable.classList.toggle('activardesplegableusuario')
 }
-
-//buscadores
-if(document.querySelector('#cedula')){
-    document.querySelector('#cedula').addEventListener('keyup',(e)=>{
-        let valor=e.target.value;
-        console.log(valor);
-    })
-}else if(document.querySelector('#provincias')){
-    document.querySelector('#provincias').addEventListener('keyup',(a)=>{
-        let valor2=a.target.value;
-        console.log(valor2);
-        let valores=new FormData()
-        valores.append('buscar',valor2)
-        fetch('adminViajesgestionar.php',{
-            method:'Post',
-            body:valores
-        })
-    })
-}else if(document.querySelector('#placa')){
-    document.querySelector('#placa').addEventListener('keyup',(a)=>{
-        let valor2=a.target.value;
-        console.log(valor2);
-    })
-}
-    
-
-
-
-    
 
 
 

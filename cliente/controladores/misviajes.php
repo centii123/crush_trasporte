@@ -12,7 +12,8 @@ include_once('../modelo/conexion.php');
     }
 }*/
 function mis_viajes(){
-    $idusuario=2; //session id usuario
+
+    $idusuario=$_SESSION['datosUs']['usuarioid']; //session id usuario
     $conexmis_viajes= new mis_viajes();
     $funsion=$conexmis_viajes-> misViajes($idusuario);
     while($row=pg_fetch_array($funsion)){

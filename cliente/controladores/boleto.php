@@ -1,7 +1,6 @@
 <?php
 require "../modelo/insertar.php";
-    session_start();
-    $usuarioid=2; //session id usuario
+    $usuarioid=$_SESSION['datosUs']['usuarioid']; //session id usuario
     $nombre=$_SESSION['datos']['nombre'];// guardo datos 
     $apellidos= $_SESSION['datos']['apellidos'];
     $cedula=$_SESSION['datos']['cedula'];

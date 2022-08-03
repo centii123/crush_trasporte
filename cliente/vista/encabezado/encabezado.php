@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+print_r($_SESSION['datosUs']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +18,11 @@
 </head> 
 <div class="navarriba">
           <a href="admin.php"><div class="logo"><img src="iconos/logo.png" alt="" width="110px" height="45px" style="margin-top:7px ;"><h3> CRUSH live transport</h3></div></a>
-          <div class="usuario"><div><div id="boton"><p><b>Enrique Sebastian Mera Yela</b> </p> <img src="iconos/chevron-down.svg" alt="" width="20px" ></div> 
+          <div class="usuario"><div><div id="boton"><p><b><?php echo $_SESSION['datosUs']['nombres']?> <?php echo $_SESSION['datosUs']['apellidos'] ?></b> </p> <img src="iconos/chevron-down.svg" alt="" width="20px" ></div> 
           <br>
-              <form action="2.php" method="get" class="desplegableusuario" id="desplegableusuario">
+              <form action="../controladores/cerrarsession.php" method="post" class="desplegableusuario" id="desplegableusuario">
 
-                   
-                   <button type="submit" class="botonCerrarSesion"><box-icon name='exit' type='solid' ></box-icon> Cerrar session</button>
+                   <button type="submit" class="botonCerrarSesion" name="cerrarsession" ><box-icon name='exit' type='solid' ></box-icon> Cerrar session</button>
                   
               </form>
             

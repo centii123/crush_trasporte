@@ -21,7 +21,7 @@ include_once ('encabezado/encabezado.php')
                 <p>
                 BIENVENID@
                 <span>
-                    Enrique Sebastian Mera Yela
+                <?php echo $_SESSION['datosUs']['nombres']?> <?php echo $_SESSION['datosUs']['apellidos'] ?>
                 </span>
                 &mdash; A CRUSH live transport &mdash;
                 </p>

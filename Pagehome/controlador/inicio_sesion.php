@@ -15,6 +15,12 @@ if(isset($_POST['ingresar'])){
             echo 'usuario incorrecto';
         }else if($comprobacion['correo']== $usuario && $comprobacion['contrasena'] == $contraseña && $comprobacion['tipo']==1){
 
+            session_start();
+            $_SESSION['datosUs']=[];
+            $_SESSION['datosUs']['usuarioid']=$comprobacion['usuarioid'];
+            $_SESSION['datosUs']['nombres']=$comprobacion['nombres'];
+            $_SESSION['datosUs']['apellidos']=$comprobacion['apellidos'];
+            print_r($_SESSION['datosUs']);
             header('location:../../cliente/vista/index.php');
 
         }else if($comprobacion['correo']== $usuario && $comprobacion['contrasena'] == $contraseña && $comprobacion['tipo']==0)

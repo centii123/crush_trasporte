@@ -25,14 +25,13 @@ while($row=pg_fetch_array($viajesconsulta)){
 $choferid=$datos[1]['cedulaem'];
 $oficialid=$datos[0]['cedulaem'];
 
-print_r($datos);
-
 if(isset($_POST['boton'])){
     $estado=$_POST['estado'];
     $provS=$_POST['provS'];
     $provLL=$_POST['provLL'];
     $costo=$_POST['costo'];
     $bus=$_POST['bus'];
+    $fecha=$_POST['fecha'];   
     $chofer=$_POST['chofer'];
     $oficial=$_POST['oficial'];
     $imagen=['png','jpg','jpeg'];
@@ -58,18 +57,6 @@ if(isset($_POST['boton'])){
             $filetipo= array_pop($filecorte);
     }
 
-    if(isset($_POST['fecha'])){
-        if(strlen($_POST['fecha'])>=1){
-            $fecha=$_POST['fecha'];
-        }else{
-            $fecha=$datos[0]['fechaviaje'];
-        }
-        
-    }else{
-        $fecha=$datos[0]['fechaviaje'];
-    }
-
-    
     if(in_array($filetipo,$imagen)){
         
         $actualizar=new actualizar();
@@ -85,7 +72,7 @@ if(isset($_POST['boton'])){
                 alerta.style.opacity= 0;
             },2000)
             setTimeout(()=>{
-                //location.href='adminpersonalgestionar.php';
+                location.href='adminpersonalgestionar.php';
             },1500)
             </script>
         <?php
@@ -121,7 +108,7 @@ if(isset($_POST['boton'])){
             echo $Mostrar->estados();
         ?>
     </select>
-    <label for="provS">provincia de salida</label>
+    <label for="provS">Provincia de salida</label>
     <select name="provS" id="provS" >
         <option value="">--provincia--</option> 
         <option value="<?php echo $datos[0]['provinciasalida']  ?>" selected><?php echo $datos[0]['salida']  ?></option>
@@ -130,7 +117,7 @@ if(isset($_POST['boton'])){
         echo $Mostrar->mostrarProvincias();
         ?>
     </select>
-    <label for="provLL">provincia de llegada</label>
+    <label for="provLL">Provincia de llegada</label>
     <select name="provLL" id="provLL" >
         <option value="">--provincia--</option>
         <option value="<?php echo $datos[0]['provinciallegada']  ?>" selected><?php echo $datos[0]['llegada']  ?></option>
@@ -139,13 +126,12 @@ if(isset($_POST['boton'])){
         echo $Mostrar->mostrarProvincias();
         ?>
     </select>
-    <label for="fecha">fecha y hora del viaje</label>
-    <span class="letraform">fecha actual= <?php echo $datos[0]['fechaviaje']  ?></span> 
-    <input type="datetime-local" name="fecha" id="fecha" >
+    <label for="fecha">Fecha y hora del viaje</label>
+    <input type="datetime-local" name="fecha" id="fecha" value="<?php echo $datos[0]['fechaviaje']  ?>" >
     
     <label for="costo">Costo del viaje</label>
     <input type="number" name="costo" id="costo" value="<?php echo $datos[0]['costoviaje']  ?>">
-    <label for="bus">bus</label>
+    <label for="bus">Bus</label>
     <select name="bus" id="bus" >
         <option value="">--bus</option>
         <option value="<?php echo $datos[0]['placab']  ?>" selected><?php echo $datos[0]['placab']  ?></option>
@@ -154,7 +140,7 @@ if(isset($_POST['boton'])){
             echo $Mostrar->bus()
         ?>
     </select>
-    <label for="chofer">chofer</label>
+    <label for="chofer">Chofer</label>
     <select name="chofer" id="chofer" >
         <option value="">--chofer</option>
         <option value="<?php echo $datos[1]['cedulaem']  ?>" selected><?php echo $datos[1]['nombreem']." ".$datos[1]['apellidoem']  ?></option>
@@ -163,7 +149,7 @@ if(isset($_POST['boton'])){
             echo $Mostrar->chofer()
         ?>
     </select>  
-    <label for="oficial">oficial</label>
+    <label for="oficial">Oficial</label>
     <select name="oficial" id="oficial" >
         <option value="">--oficial</option>
         <option value="<?php echo $datos[0]['cedulaem']  ?>" selected><?php echo $datos[0]['nombreem']." ".$datos[0]['apellidoem']  ?></option>
@@ -173,8 +159,7 @@ if(isset($_POST['boton'])){
             echo $Mostrar->oficial()
         ?>
     </select>                        
-    <label for="img">Foto del viaje</label>
-    <span class="letraform">imagen= <?php echo $datos[0]['fotoviaje']  ?></span> 
-    <input type="file" name="foto" id="img" >
+    <label for="img">Foto del viaje <span class="letraform">*opcional</span></label>
+    <input type="file" name="foto" id="img">
     <button type="submit" name="boton">Registrarse</button>
 </form>

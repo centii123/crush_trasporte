@@ -94,14 +94,13 @@ if(isset($_POST['actualizar'])){
         }
         ?>
     </select>             
-    <label for="placa">placa</label>
+    <label for="placa">Placa</label>
     <input type="text" name="placa" id="placa" placeholder="placa" value="<?php echo $verbusarray['placab'] ?>" >
-    <label for="modelo">modelo</label>
+    <label for="modelo">Modelo</label>
     <input type="text" name="modelo" id="modelo" placeholder="modelo" value="<?php echo $verbusarray['modelo']  ?>" >
     <label for="asientos">Numero de asientos</label>
     <input type="number" name="asientos" id="asientos" placeholder="Numero de asientos" value="<?php echo intval($verbusarray['asientos']) ?>">
-    <label for="img">opcional: imagen del Bus</label>
-    <span class="letraform">imagen= <?php echo $verbusarray['imagenbus']  ?></span> 
+    <label for="img">Imagen del Bus <span class="letraform">*opcional</span> </label>
     <input type="file" name="foto" id="img" >
     <button type="submit" name="actualizar">Actualizar</button>
 </form>

@@ -36,15 +36,15 @@ include_once('../admin_controlador/personal.php')
                             <option value="1">Activo</option> <!--values es el valor que envias en php-->
                             <option value="2">Inactivo</option>
                         </select>
-                        <label for="nombre">cedula</label>
-                        <input type="number" name="cedula" id="nombre" placeholder="nombre" >
-                        <label for="nombre">nombres</label>
+                        <label for="nombre">Cedula</label>
+                        <input type="text" name="cedula" minlength="10" maxlength="10" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" placeholder="cedula">  
+                        <label for="nombre">Nombres</label>
                         <input type="text" name="nombres" id="nombre" placeholder="nombre" >
-                        <label for="apellido">apellidos</label>
+                        <label for="apellido">Apellidos</label>
                         <input type="text" name="apellidos" id="apellido" placeholder="apellido" >
-                        <label for="role">role</label>
+                        <label for="role">Rol</label>
                         <select name="role" id="role" required>
-                            <option value="">--role</option> <!--values es el valor que envias en php-->
+                            <option value="">--rol</option> <!--values es el valor que envias en php-->
                             <?php
                             echo $Mostrar->role();
                             ?>

@@ -37,39 +37,39 @@ include_once('../admin_controlador/viaje.php')
                                 echo $Mostrar->estados();
                             ?>
                         </select>
-                        <label for="provS">provincia de salida</label>
+                        <label for="provS">Provincia de salida</label>
                         <select name="provS" id="provS" >
                             <option value="">--provincia--</option> 
                             <?php
                             echo $Mostrar->mostrarProvincias();
                             ?>
                         </select>
-                        <label for="provLL">provincia de llegada</label>
+                        <label for="provLL">Provincia de llegada</label>
                         <select name="provLL" id="provLL" >
                             <option value="">--provincia--</option>
                             <?php
                             echo $Mostrar->mostrarProvincias();
                             ?>
                         </select>
-                        <label for="fecha">fecha y hora del viaje</label>
+                        <label for="fecha">Fecha y hora del viaje</label>
                         <input type="datetime-local" name="fecha" id="fecha" >
                         <label for="costo">Costo del viaje</label>
-                        <input type="number" name="costo" id="costo" >
-                        <label for="bus">bus</label>
+                        <input type="number" name="costo" id="costo" placeholder="costo">
+                        <label for="bus">Bus</label>
                         <select name="bus" id="bus" >
                             <option value="">--bus</option>
                             <?php
                                 echo $Mostrar->bus()
                             ?>
                         </select>
-                        <label for="chofer">chofer</label>
+                        <label for="chofer">Chofer</label>
                         <select name="chofer" id="chofer" >
                             <option value="">--chofer</option>
                             <?php
                                 echo $Mostrar->chofer()
                             ?>
                         </select>  
-                        <label for="oficial">oficial</label>
+                        <label for="oficial">Oficial</label>
                         <select name="oficial" id="oficial" >
                             <option value="">--oficial</option>
                             <?php

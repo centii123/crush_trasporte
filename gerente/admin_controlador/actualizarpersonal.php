@@ -17,7 +17,7 @@ if(isset($_POST['actualizar'])){
     $nombres=$_POST['nombres'];
     $apellidos=$_POST['apellidos'];
     $role=intval($_POST['role']);
-    $imagen=['png','jpg'];
+    $imagen=['png','jpg','jpeg'];
     if(isset($_FILES['foto'])){
         if(strlen($_FILES['foto']['name'])>=1){           
             $file=$_FILES['foto'];
@@ -40,9 +40,6 @@ if(isset($_POST['actualizar'])){
             $filetipo= array_pop($filecorte);
     }
 
-    print_r($filen);
-    print_r($filecorte);
-    print_r($filetipo);
     
     if(in_array($filetipo,$imagen)){
         
@@ -103,15 +100,15 @@ if(isset($_POST['actualizar'])){
         ?>
         
     </select>
-    <label for="nombre">cedula</label>
-    <input type="number" name="cedula" id="nombre" placeholder="nombre" value="<?php echo $arr['cedulae'] ?>" >
-    <label for="nombre">nombres</label>
+    <label for="nombre">Cedula</label>
+    <input type="text" name="cedula" value="<?php echo $arr['cedulae'] ?>" minlength="10" maxlength="10" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" placeholder="cedula">  
+    <label for="nombre">Nombres</label>
     <input type="text" name="nombres" id="nombre" placeholder="nombre" value="<?php echo $arr['nombres'] ?>" >
-    <label for="apellido">apellidos</label>
+    <label for="apellido">Apellidos</label>
     <input type="text" name="apellidos" id="apellido" placeholder="apellido" value="<?php echo $arr['apellidos'] ?>">
-    <label for="role">role</label>
+    <label for="role">Rol</label>
     <select name="role" id="role" required>
-        <option value="">--role</option>
+        <option value="">--rol</option>
         <?php
         if($arr['rolesid']==1){
             ?>
@@ -132,8 +129,7 @@ if(isset($_POST['actualizar'])){
         echo $Mostrar->role();
         ?>
     </select>
-    <label for="img">opcional: Foto del empleado</label>
-    <span class="letraform">imagen= <?php echo $arr['imagenempleado']  ?></span> 
+    <label for="img">Foto del empleado <span class="letraform">*opcional</span></label>
     <input type="file" name="foto" id="img">  
   
     <button type="submit" name="actualizar">Actualizar</button>

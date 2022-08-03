@@ -15,12 +15,19 @@ if(isset($_POST['ingresar'])){
             echo 'usuario incorrecto';
         }else if($comprobacion['correo']== $usuario && $comprobacion['contrasena'] == $contraseña && $comprobacion['tipo']==1){
 
-            header('location:../../cliente/vista');
+            header('location:../../cliente/vista/index.php');
 
         }else if($comprobacion['correo']== $usuario && $comprobacion['contrasena'] == $contraseña && $comprobacion['tipo']==0)
         {
-
-            header('location:https://www.youtube.com/');
+            //print_r($comprobacion);
+            session_start();
+            $_SESSION['datos']=[];
+            $_SESSION['datos']['usuarioid']=$comprobacion['usuarioid'];
+            $_SESSION['datos']['nombres']=$comprobacion['nombres'];
+            $_SESSION['datos']['apellidos']=$comprobacion['apellidos'];
+            print_r($_SESSION['datos']);
+            
+            header('location:../../gerente/admin_Vistas/admin.php');
 
         }
 }

@@ -26,7 +26,7 @@
                     <p>
                     BIENVENID@
                     <span>
-                        <?php echo $_SESSION['usuario'] ?>
+                    <?php echo $_SESSION['usuario']['nombres'] ?> <?php echo $_SESSION['usuario']['apellidos'] ?>
                     </span>
                     &mdash; AL MODULO GERENTE &mdash;
                     </p>

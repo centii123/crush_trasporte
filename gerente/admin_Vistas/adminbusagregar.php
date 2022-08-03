@@ -38,13 +38,13 @@ include_once('../admin_controlador/bus.php');
                             <option value="1">Activo</option>
                             <option value="2">Inactivo</option>
                         </select>             
-                        <label for="placa">placa</label>
+                        <label for="placa">Placa</label>
                         <input type="text" name="placa" id="placa" placeholder="placa" >
-                        <label for="modelo">modelo</label>
+                        <label for="modelo">Modelo</label>
                         <input type="text" name="modelo" id="modelo" placeholder="modelo" >
                         <label for="asientos">Numero de asientos</label>
                         <input type="number" name="asientos" id="asientos" placeholder="Numero de asientos" >
-                        <label for="img">imagen del Bus</label>
+                        <label for="img">Imagen del bus</label>
                         <input type="file" name="img" id="img" >
                         <button type="submit" name="boton">Registrar</button>
                     </form>

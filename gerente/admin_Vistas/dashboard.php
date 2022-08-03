@@ -18,7 +18,7 @@ include_once('encabezado/admincabeza.php');
         </div>
         </div>
         <div class="contenido" style="padding: 0;">
-        <iframe src="../../../2/Pagehome/vistas/index.php" frameborder="0" width="100%" height="100%" allowfullscreen ></iframe>
+        <iframe src="../../Pagehome/vistas/index.php" frameborder="0" width="100%" height="100%" allowfullscreen ></iframe>
         </div>
     </div>
     <?php

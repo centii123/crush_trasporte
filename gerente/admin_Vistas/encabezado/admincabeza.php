@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['usuario']='Enrique Sebastian Mera Yela';
+$_SESSION['usuario']=$_SESSION['datos'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,12 +19,12 @@ $_SESSION['usuario']='Enrique Sebastian Mera Yela';
 <body>
 <div class="navarriba">
           <a href="admin.php"><div class="logo"><img src="iconos/logo.png" alt="" width="110px" height="45px" style="margin-top:7px ;"><h3> CRUSH live transport</h3></div></a>
-          <div class="usuario"><div><div id="boton"><p><b><?php echo $_SESSION['usuario'] ?></b> </p> <img src="iconos/chevron-down.svg" alt="" width="20px" ></div> 
+          <div class="usuario"><div><div id="boton"><p><b><?php echo $_SESSION['usuario']['nombres'] ?> <?php echo $_SESSION['usuario']['apellidos'] ?></b> </p> <img src="iconos/chevron-down.svg" alt="" width="20px" ></div> 
           <br>
-              <form action="../admin_controlador/cerrarsession.php" method="get" class="desplegableusuario" id="desplegableusuario">
+              <form action="../admin_controlador/cerrarsession.php" method="post" class="desplegableusuario" id="desplegableusuario">
 
                    
-                   <button type="submit" class="botonCerrarSesion"><box-icon name='exit' type='solid' ></box-icon> Cerrar session</button>
+                   <button type="submit" class="botonCerrarSesion" name="cerrar" ><box-icon name='exit' type='solid' ></box-icon> Cerrar session</button>
                   
               </form>
             

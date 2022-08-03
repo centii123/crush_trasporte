@@ -1,5 +1,6 @@
 <?php
-include_once ('encabezado/encabezado.php')
+include_once ('encabezado/encabezado.php');
+include ('../controladores/misviajes.php');
 ?>
 <div class="contenedor">
     <div class="nav">
@@ -12,7 +13,7 @@ include_once ('encabezado/encabezado.php')
     </div>
     <div class="contenido" >
         
-        <hr>
+        <!--<hr>
         <div class="flex">
             <div class="busqueda">               
                 <form action="" method="post" >  
@@ -22,66 +23,15 @@ include_once ('encabezado/encabezado.php')
                 </form>
             </div>
         </div>
-        <hr>
+        <hr>-->
         <center><h1>MIS VIAJES</h1></center>
         <div class="cards">
-            <!--margin-->
-            <div class="card"> <!--border-->
-                <h3>lugar del viaje</h3>
-                <img src="https://www.elagoradiario.com/wp-content/uploads/2022/05/Sidney-Australia-1140x600.jpg" alt="">
-                <h3>Nombre del pasajero</h3>
-                <h3>Apellido del pasajero</h3>
-                <h3>Asiento</h3>
-                <h3>FECHA DE VIAJE</h3>
-                <!--padding-->
-            </div>
-            <div class="card"> <!--border-->
-                <h3>PAIS</h3>
-                <img src="https://www.elagoradiario.com/wp-content/uploads/2022/05/Sidney-Australia-1140x600.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit eos veritatis facere aliquam enim quod expedita velit? Doloribus nostrum voluptate necessitatibus nemo, omnis expedita dolores itaque corporis, assumenda officia totam!</p>
-                <button><a href="">RESERVAR</a></button>
-                <!--padding-->
-            </div>
-            <div class="card"> <!--border-->
-                <h3>PAIS</h3>
-                <img src="https://www.elagoradiario.com/wp-content/uploads/2022/05/Sidney-Australia-1140x600.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit eos veritatis facere aliquam enim quod expedita velit? Doloribus nostrum voluptate necessitatibus nemo, omnis expedita dolores itaque corporis, assumenda officia totam!</p>
-                <button><a href="">RESERVAR</a></button>
-                <!--padding-->
-            </div>
-            <div class="card"> <!--border-->
-                <h3>PAIS</h3>
-                <img src="https://www.elagoradiario.com/wp-content/uploads/2022/05/Sidney-Australia-1140x600.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit eos veritatis facere aliquam enim quod expedita velit? Doloribus nostrum voluptate necessitatibus nemo, omnis expedita dolores itaque corporis, assumenda officia totam!</p>
-                <button><a href="">RESERVAR</a></button>
-                <!--padding-->
-            </div>
-            <div class="card"> <!--border-->
-                <h3>PAIS</h3>
-                <img src="https://www.elagoradiario.com/wp-content/uploads/2022/05/Sidney-Australia-1140x600.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit eos veritatis facere aliquam enim quod expedita velit? Doloribus nostrum voluptate necessitatibus nemo, omnis expedita dolores itaque corporis, assumenda officia totam!</p>
-                <button><a href="">RESERVAR</a></button>
-                <!--padding-->
-            </div>
-            <div class="card"> <!--border-->
-                <h3>PAIS</h3>
-                <img src="https://www.elagoradiario.com/wp-content/uploads/2022/05/Sidney-Australia-1140x600.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit eos veritatis facere aliquam enim quod expedita velit? Doloribus nostrum voluptate necessitatibus nemo, omnis expedita dolores itaque corporis, assumenda officia totam!</p>
-                <button><a href="">RESERVAR</a></button>
-                <!--padding-->
-            </div><div class="card"> <!--border-->
-                <h3>PAIS</h3>
-                <img src="https://www.elagoradiario.com/wp-content/uploads/2022/05/Sidney-Australia-1140x600.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit eos veritatis facere aliquam enim quod expedita velit? Doloribus nostrum voluptate necessitatibus nemo, omnis expedita dolores itaque corporis, assumenda officia totam!</p>
-                <button><a href="">RESERVAR</a></button>
-                <!--padding-->
-            </div><div class="card"> <!--border-->
-                <h3>PAIS</h3>
-                <img src="https://www.elagoradiario.com/wp-content/uploads/2022/05/Sidney-Australia-1140x600.jpg" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit eos veritatis facere aliquam enim quod expedita velit? Doloribus nostrum voluptate necessitatibus nemo, omnis expedita dolores itaque corporis, assumenda officia totam!</p>
-                <button><a href="">RESERVAR</a></button>
-                <!--padding-->
-            </div> 
+
+            <?php
+
+            echo mis_Viajes();
+            ?>
+
   </div>
 </div>
 <?php

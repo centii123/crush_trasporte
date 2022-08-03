@@ -1,5 +1,6 @@
 <?php
-include_once ('encabezado/encabezado.php')
+include_once ('encabezado/encabezado.php');
+include "../controladores/pasajero.php";
 ?>
 <div class="contenedor">
     <div class="nav">
@@ -20,21 +21,28 @@ include_once ('encabezado/encabezado.php')
             <div class="center">
             <div class="registroadmin">
                 <div class="center"><h3>DATOS DEL PASAJERO</h3></div>
-                <form action="" method="post">
+                <form action="datos.php?viajeid=<?php echo $_GET['viajeid']?>&viajesalida=<?php echo $_GET['viajesalida'] ?>&viajellegada=<?php echo $_GET['viajellegada']?>" method="post">
                     <label for="viaje">viaje </label>
-                        <select name="viaje" id="viaje" disabled>
-                            <option value="">Ecuador</option> 
+                        <select name="viaje" id="viaje"  >
+                            <?php
+                              if(isset($_GET['viajeid'])){ // get enviar 
+                                ?>
+                                <option value="<?php echo $_GET['viajeid']?>" selected ><?php echo $_GET['viajesalida']?>-<?php echo $_GET['viajellegada']?></option> 
+                                <?php
+                              } 
+                            ?>
                         </select>
                     <label for="cedula">cedula</label>
-                    <input type="number" name="cedula" id="cedula" placeholder="cedula" >
+                    <input type="text" name="cedula" minlength="10" maxlength="10" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;" placeholder="cedula">  
+                    <!--<input type="number" name="cedula" id="cedula" placeholder="cedula" min="10000000000" max="9999999999" >-->
                     <label for="nombres">nombres</label>
                     <input type="text" name="nombres" id="nombres" placeholder="nombres" >
                     <label for="apellidos">apellidos</label>
-                    <input type="text" name="correo" id="correo" placeholder="correos" >
+                    <input type="text" name="apellidos" id="apellidos" placeholder="apellidos" >
                     
                     <label for="Asiento">Asiento</label>
                     <input type="number" name="Asiento" id="Asiento" placeholder="Asiento" >
-                    <button type="submit"><a href="comprar.php">SIGUIENTE</a></button>
+                    <button type="submit" name="boton"><!--<a href="comprar.php">SIGUIENTE</a>-->SIGUIENTE</button>
                 </form>
             </div>
         </div>

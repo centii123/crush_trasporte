@@ -45,7 +45,7 @@ class catalogo extends coneccion{
         return $this->query;
     }
     
-   
+
 
 }
 class buscar extends coneccion{
@@ -58,6 +58,16 @@ class buscar extends coneccion{
     }
 }
 
+class mis_viajes extends coneccion{
+    public $consulta;
+    public $query;
+    public function misViajes($idusuario){
+        $this->consulta="SELECT pa.cedulap,pa.nombres nombrespasajero,pa.apellidos apellidospasajero,pa.asiento,b.*,us.*,vi.*,llegada.provinciaid llegadaid,llegada.descripcion llegada,salida.provinciaid idsalida,salida.descripcion salida FROM pasajero pa inner join boleto b on pa.boletoid=b.boletoid INNER JOIN usuario us on b.usuarioid=us.usuarioid INNER JOIN viajes vi on b.viajesid=vi.viajesid INNER JOIN provincia salida on salida.provinciaid= vi.provinciasalida INNER JOIN provincia llegada on llegada.provinciaid= vi.provinciallegada Where us.usuarioid=$idusuario AND vi.estadosid=1 or vi.estadosid=3";
+        $this->query=pg_query($this->conex,$this->consulta);
+        return $this->query;
+    }
+    
+}
 
 
 ?>

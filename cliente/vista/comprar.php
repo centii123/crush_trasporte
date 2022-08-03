@@ -1,5 +1,7 @@
+<div id="espacioA"></div>
 <?php
-include_once('encabezado/encabezado.php')
+include_once('encabezado/encabezado.php');
+include "../controladores/boleto.php";
 ?>
 <div class="contenedor">
     <div class="nav">
@@ -40,21 +42,22 @@ include_once('encabezado/encabezado.php')
                     <div class="center">
                         <h3>COMPRAR CON TARGETA</h3>
                     </div>
-                    <form action="" method="post">
+                    <form action="comprar.php" method="post">
                         <label for="cuenta">tipo de cuenta</label>
                         <select name="cuenta" id="cuenta">
-                            <option value="">--pago--</option>
+                            <option value="">--tipo de tarjeta</option>
+                            <option value="1">debito</option>
+                            <option value="2">credito</option>
                             <!--values es el valor que envias en php-->
                         </select>
-                        <label for="telefono"> telefono </label>
-                        <input type="text" name="telefono" id="telefono" placeholder="telefono">
+                        
                         <label for="titular">Nombre del titular</label>
                         <input type="text" name="titular" id="titular" placeholder="Nombre del titular">
                         <label for="N_cuenta">Numero de cuenta</label>
                         <input type="number" name="N_cuenta" id="N_cuenta" placeholder="Numero de cuenta">
                         <label for="CVC">Codigo CVC</label>
                         <input type="number" name="CVC" id="CVC" placeholder="Codigo CVC">
-                        <button type="submit"><a href="mis_viajes.php">Finalizar compra</a></button>
+                        <button type="submit" name="compra">Finalizar compra</button>
                     </form>
                 </div>
             </div>

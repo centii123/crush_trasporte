@@ -21,7 +21,7 @@ function tarjetas(){
     }else{
         $llegada=0;
         $salida=0;
-        $estados=1;
+        $estados=1;// LA BUSQUEDA 
     }
     
     $conexcatalogo= new catalogo();
@@ -34,9 +34,9 @@ function tarjetas(){
                 <img src="https://www.elagoradiario.com/wp-content/uploads/2022/05/Sidney-Australia-1140x600.jpg" alt="">
                 <h3>provincia salida: <?php echo $row['provinciasalida'] ?><br> provincia llegada: <?php echo $row['provinciallegada'] ?></h3>
                 <p>costo: <?php echo $row['costoviaje'] ?><br><br>bus: <?php echo $row['placab'] ?></p>
-                
-                <button><a href="datos.php">RESERVAR</a></button>
-                <!--padding-->
+                <p><?php echo $row['estadosid'] ?></p>
+                <button><a href="datos.php?viajeid=<?php echo $row['viajesid']?>&viajesalida=<?php echo $row['provinciasalida'] ?>&viajellegada=<?php echo $row['provinciallegada']?>">RESERVAR</a></button>
+               
             </div>
         <?php
     }

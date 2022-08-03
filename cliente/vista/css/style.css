@@ -322,7 +322,7 @@ a{
     background-color: rgb(78, 78, 78) ;
 }
 
-/*card*/
+
 /*card*/
 .cards{
     display: flex;
@@ -347,6 +347,7 @@ a{
 .card h3{
     display: flex;
     justify-content: center;
+    margin: 7px 0 7px 0;
 }
 .card button{
     background-color: rgb(117, 117, 117);

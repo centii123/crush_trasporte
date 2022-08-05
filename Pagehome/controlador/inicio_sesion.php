@@ -12,7 +12,7 @@ if(isset($_POST['ingresar'])){
 
 
         if(!$comprobacion){
-            echo 'usuario incorrecto';
+            echo "<script>alert( 'Revise que su usuario y contraseña sean correctos' );</script>";
         }else if($comprobacion['correo']== $usuario && $comprobacion['contrasena'] == $contraseña && $comprobacion['tipo']==1){
 
             session_start();

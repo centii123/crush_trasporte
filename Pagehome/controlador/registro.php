@@ -16,11 +16,11 @@ if(isset($_POST['registrar'])){
         if($validar){
             echo "<script>alert( 'Registrado con exito' );</script>";
         }else{
-            echo 'error al registrar';
+            echo "<script>alert( 'Ah ocurrido un problema al registrar' );</script>";
         }
 
     }else{
-        echo 'La contraseñas no coinciden';
+        echo "<script>alert( 'Su contraseña no coincide' );</script>";
     }
 
     

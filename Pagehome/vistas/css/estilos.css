@@ -485,4 +485,9 @@ img{
     float: right;
     border: 3px solid #333;
     background: #ba6ceeb9;
+    height: 400px;
 }
+.bx bxs-envelope{
+    color: rgb(190, 183, 183);
+}
+

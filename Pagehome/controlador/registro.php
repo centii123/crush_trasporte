@@ -14,7 +14,7 @@ if(isset($_POST['registrar'])){
         $registrar=new validacion;
         $validar=$registrar->Registro($tipo,$nombres,$apellidos,$correo,$contraseña);
         if($validar){
-            echo 'Registrado con exito';
+            echo "<script>alert( 'Registrado con exito' );</script>";
         }else{
             echo 'error al registrar';
         }

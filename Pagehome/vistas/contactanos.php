@@ -24,18 +24,18 @@ include('encabezado/encabezado.php')
         <section class="">
             <div class="izquierdo">
                 <div class="col frame">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d63836.316570603514!2d-78.50255806174668!3d-0.28261004721286365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-0.2337436!2d-78.49224269999999!4m5!1s0x91d5bce316ad1c7d%3A0xaac94a05baefaba8!2sparadas%20de%20buses%20en%20quito!3m2!1d-0.3334929!2d-78.4428585!5e0!3m2!1ses!2sec!4v1657672469659!5m2!1ses!2sec" width="500" height="405" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d63836.316570603514!2d-78.50255806174668!3d-0.28261004721286365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-0.2337436!2d-78.49224269999999!4m5!1s0x91d5bce316ad1c7d%3A0xaac94a05baefaba8!2sparadas%20de%20buses%20en%20quito!3m2!1d-0.3334929!2d-78.4428585!5e0!3m2!1ses!2sec!4v1657672469659!5m2!1ses!2sec" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
             <div class="derecha">
                 <div class="datos">
                     <h3>
-                        <i class='bx bxs-envelope' id='correo'></i><b class='correo' >Correo electrónico:</b> lgm.bocon@yavirac.edu.ec<br>
-                        <br><i class='bx bx-time-five' id='horario'><b>Horario de atención:</b></i> Todos los dias.<br><br>
-                        <i class='bx bx-directions' id=''><b>Dirección:</b></i> Nuevas Terminales Terrestres del Ecuador<br>Tababela S/N - Via, Quito 170907 <br><br>
-                        <i class='bx bx-phone' id='telefono'><b>Teléfono:</b> 022643611</i><br><br>
-                        <i class='bx bx-webcam' id='pagina'><b>Pagina web:</b></i> www.crush_live_transport.com<br><br>
-                        <i class='bx bxl-facebook-circle' id='facebook'><b>Facebook:</b></i> CRUSH Live Transport
+                        <i class='bx bxs-envelope'><b>Correo electrónico:</b></i> lgm.bocon@yavirac.edu.ec
+                        <br><i class='bx bx-time-five' ><b>Horario de atención:</b></i> Todos los dias.<br>
+                        <i class='bx bx-directions' ><b>Dirección:</b></i> Nuevas Terminales Terrestres del Ecuador<br> Tababela S/N - Via, Quito 170907 <br>
+                        <i class='bx bx-phone'><b>Teléfono:</b> 022643611</i><br>
+                        <i class='bx bx-webcam' ><b>Pagina web:</b></i> www.crush_live_transport.com<br>
+                        <i class='bx bxl-facebook-circle'><b>Facebook:</b></i> CRUSH Live Transport
                         
                     </h3>
                 </div>

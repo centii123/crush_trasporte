@@ -1,5 +1,14 @@
 <?php
 require_once "../modelo/validacion.php";
+session_start();
+if(isset($_SESSION['datosUs'])){
+    header('location:../../cliente/vista/index.php');
+}
+if(isset($_SESSION['datos'])){
+    header('location:../../gerente/admin_Vistas/admin.php');
+}
+
+
 if(isset($_POST['ingresar'])){
         $usuario=$_POST ['usuario'];
 
@@ -12,7 +21,7 @@ if(isset($_POST['ingresar'])){
 
 
         if(!$comprobacion){
-            echo "<script>alert( 'Revise que su usuario y contraseña sean correctos' );</script>";
+            echo 'usuario incorrecto';
         }else if($comprobacion['correo']== $usuario && $comprobacion['contrasena'] == $contraseña && $comprobacion['tipo']==1){
 
             session_start();

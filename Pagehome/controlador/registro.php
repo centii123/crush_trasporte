@@ -14,13 +14,13 @@ if(isset($_POST['registrar'])){
         $registrar=new validacion;
         $validar=$registrar->Registro($tipo,$nombres,$apellidos,$correo,$contraseña);
         if($validar){
-            echo "<script>alert( 'Registrado con exito' );</script>";
+            echo 'Registrado con exito';
         }else{
-            echo "<script>alert( 'Ah ocurrido un problema al registrar' );</script>";
+            echo 'error al registrar';
         }
 
     }else{
-        echo "<script>alert( 'Su contraseña no coincide' );</script>";
+        echo 'La contraseñas no coinciden';
     }
 
     

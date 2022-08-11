@@ -20,7 +20,7 @@ include('encabezado/encabezado.php')
         </div>
     </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <!--contenido-->
-    <img src="img/lll.png" height="100px" width="300px">
+    <img src="img/lll.png" height="100px" width="300px"><br><br><h3 align='center'>Contribuido por</h3><img src="img/contributed.png" width="400px" height='300px'>
     <div class="contenido">
         <br>
         <p><i class="icon-lock"></i>Somos una empresa ecuatoriana dedicada a la venta de boletos para viajes a todas

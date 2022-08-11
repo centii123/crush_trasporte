@@ -1,30 +1,7 @@
 <?php
-class coneccion{
-    private $host='localhost';
-    private $port=5432;
-    private $base='crush';
-    private $user='postgres';
-    private $pass= 'Juventud123';
-    public $conex;
-    public function __construct()
-    {
-        $this->conex=pg_connect("host=$this->host port=$this->port dbname=$this->base user=$this->user password=$this->pass");
-    }
-    /*public function con(){
-       return $this->conex;
-    }*/
-}
-/*$conec= new coneccion();
+require '../../basedatos/basedatos.php';
 
-$comprobacion=$conec->con();
-        
-if($comprobacion){
-    echo 'si';
-}else{
-    echo 'no';
-}*/
-
-class ver extends coneccion{
+class ver extends conexion{
 
     public $consulta;
     public $query;
@@ -32,6 +9,7 @@ class ver extends coneccion{
     $this->consulta="SELECT * FROM provincia";
     $this->query=pg_query($this->conex,$this->consulta);
     return $this->query;
+    
     }
     public function verAsientos($id){
         $this->consulta="SELECT pa.cedulap,pa.asiento,pa.boletoid,vi.viajesid,vi.placab FROM pasajero pa INNER JOIN boleto bo ON pa.boletoid = bo.boletoid INNER JOIN viajes vi ON bo.viajesid = vi.viajesid WHERE vi.viajesid= $id";
@@ -40,7 +18,7 @@ class ver extends coneccion{
     }
 }
 
-class catalogo extends coneccion{
+class catalogo extends conexion{
     public $consulta;
     public $query;
 
@@ -53,7 +31,7 @@ class catalogo extends coneccion{
 
 
 }
-class buscar extends coneccion{
+class buscar extends conexion{
     public $consulta;
     public $query;
     public function buscar(){
@@ -63,16 +41,14 @@ class buscar extends coneccion{
     }
 }
 
-class mis_viajes extends coneccion{
+class mis_viajes extends conexion{
     public $consulta;
     public $query;
     public function misViajes($idusuario){
-        $this->consulta="SELECT pa.cedulap,pa.nombres nombrespasajero,pa.apellidos apellidospasajero,pa.asiento,pa.boletoid boletopasajero,b.*,us.*,vi.*,llegada.provinciaid llegadaid,llegada.descripcion llegada,salida.provinciaid idsalida,salida.descripcion salida FROM pasajero pa inner join boleto b on pa.boletoid=b.boletoid INNER JOIN usuario us on b.usuarioid=us.usuarioid INNER JOIN viajes vi on b.viajesid=vi.viajesid INNER JOIN provincia salida on salida.provinciaid= vi.provinciasalida INNER JOIN provincia llegada on llegada.provinciaid= vi.provinciallegada Where us.usuarioid=$idusuario AND vi.estadosid=1 or vi.estadosid=3";
+        $this->consulta="SELECT pa.cedulap,pa.nombres nombrespasajero,pa.apellidos apellidospasajero,pa.asiento,b.*,us.*,vi.*,llegada.provinciaid llegadaid,llegada.descripcion llegada,salida.provinciaid idsalida,salida.descripcion salida FROM pasajero pa inner join boleto b on pa.boletoid=b.boletoid INNER JOIN usuario us on b.usuarioid=us.usuarioid INNER JOIN viajes vi on b.viajesid=vi.viajesid INNER JOIN provincia salida on salida.provinciaid= vi.provinciasalida INNER JOIN provincia llegada on llegada.provinciaid= vi.provinciallegada Where us.usuarioid=$idusuario AND vi.estadosid=1 or vi.estadosid=3";
         $this->query=pg_query($this->conex,$this->consulta);
         return $this->query;
     }
     
 }
-
-
 ?>

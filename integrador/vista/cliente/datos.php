@@ -1,6 +1,6 @@
 <?php
 include_once ('encabezado/encabezado.php');
-include "../controladores/pasajero.php";
+include "../../controlador/cliente/pasajero.php";
 ?>
 <div class="contenedor">
     <div class="nav">
@@ -48,7 +48,7 @@ include "../controladores/pasajero.php";
                     <label for="Asiento">Asiento </label>
                         <select name="Asiento" id="Asiento">
                             <?php
-                                require_once "../controladores/ver.php";
+                                require_once "../../controlador/cliente/ver.php";
                                 echo verasiento();
                             ?>
                         </select>

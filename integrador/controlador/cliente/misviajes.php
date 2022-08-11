@@ -1,5 +1,5 @@
 <?php
-include_once('../modelo/conexion.php');
+include_once('../../modelo/cliente/funciones.php');
 
 /*function buscar(){
     $conexbuscar= new buscar();
@@ -28,7 +28,7 @@ function mis_viajes(){
                 <h3>cedula: <?php echo  $row['cedulap'] ?></h3>
                 <h3>Asiento : <?php echo  $row['asiento'] ?></h3>
                 <h3>FECHA DE VIAJE : <br> <?php echo  $row['fechaviaje'] ?></h3>
-                <button onclick="return eliminar()"><a href="../controladores/Eliminarboleto.php?idboleto=<?php echo $row['boletoid'];  ?>&idpasajero=<?php echo $row['cedulap'];  ?>">Eliminar</a></button>
+                <button onclick="return eliminar()"><a href="../../controlador/cliente/Eliminarboleto.php?idboleto=<?php echo $row['boletoid'];  ?>&idpasajero=<?php echo $row['cedulap'];  ?>">Eliminar boleto</a></button>
                 <!--padding-->
             </div>
      <?php

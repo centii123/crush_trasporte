@@ -1,5 +1,5 @@
 <?php
-require "../modelo/insertar.php";
+require "../../modelo/cliente/insertar.php";
     $usuarioid=$_SESSION['datosUs']['usuarioid']; //session id usuario
     $nombre=$_SESSION['datos']['nombre'];// guardo datos 
     $apellidos= $_SESSION['datos']['apellidos'];
@@ -26,7 +26,7 @@ if(isset($_POST['compra'])){
                 alerta.style.opacity= 0;
             },2000)
             setTimeout(()=>{
-                /*location.href='mis_viajes.php';*/
+                location.href='mis_viajes.php';
             },1500)
             </script>
     <?php

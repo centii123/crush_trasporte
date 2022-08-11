@@ -143,7 +143,7 @@ if(isset($_POST['boton'])){
     <label for="chofer">Chofer</label>
     <select name="chofer" id="chofer" >
         <option value="">--chofer</option>
-        <option value="<?php echo $datos[1]['cedulaem']  ?>" selected><?php echo $datos[1]['nombreem']." ".$datos[1]['apellidoem']  ?></option>
+        <option value="<?php echo $datos[0]['cedulaem']  ?>" selected><?php echo $datos[0]['nombreem']." ".$datos[0]['apellidoem']  ?></option>
         <option value="">-----------------------------------------</option>
         <?php
             echo $Mostrar->chofer()
@@ -152,7 +152,7 @@ if(isset($_POST['boton'])){
     <label for="oficial">Oficial</label>
     <select name="oficial" id="oficial" >
         <option value="">--oficial</option>
-        <option value="<?php echo $datos[0]['cedulaem']  ?>" selected><?php echo $datos[0]['nombreem']." ".$datos[0]['apellidoem']  ?></option>
+        <option value="<?php echo $datos[1]['cedulaem']  ?>" selected><?php echo $datos[1]['nombreem']." ".$datos[1]['apellidoem']  ?></option>
        
         <option value="">-----------------------------------------</option>
         <?php

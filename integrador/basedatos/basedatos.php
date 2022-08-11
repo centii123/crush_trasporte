@@ -4,7 +4,7 @@ class conexion{
     private $port=5432;
     private $base='crush';
     private $user='postgres';
-    private $pass='1234';
+    private $pass='Juventud123';
     public $conex;
     public function __construct()
     {

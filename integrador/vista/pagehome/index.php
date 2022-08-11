@@ -30,7 +30,7 @@ include('encabezado/encabezado.php');
             <hr>
             <img src="img/cotopaxi.jpg" width="250px" height="150px">
             <hr>
-            <a href="#" class="resultado">Reservar Ahora</a>
+            <a href="inicio_sesion.php" class="resultado">Reservar Ahora</a>
         </div>
         <div class="oferta">
             <h2>Azuay</h2>
@@ -39,7 +39,7 @@ include('encabezado/encabezado.php');
             <hr>
             <img src="img/azuay.jfif" width="250px" height="150px">
             <hr>
-            <a href="#" class="resultado">Reservar Ahora</a>
+            <a href="inicio_sesion.php" class="resultado">Reservar Ahora</a>
         </div>
         <div class="oferta">
             <h2>Bolivar</h2>
@@ -48,7 +48,7 @@ include('encabezado/encabezado.php');
             <hr>
             <img src="img/bolivar.jfif" width="250px" height="150px">
             <hr>
-            <a href="#" class="resultado">Reservar Ahora</a>
+            <a href="inicio_sesion.php" class="resultado">Reservar Ahora</a>
         </div>
         <div class="oferta">
             <h2>Cañar</h2>
@@ -57,7 +57,7 @@ include('encabezado/encabezado.php');
             <hr>
             <img src="img/cañar.webp" width="250px" height="150px">
             <hr>
-            <a href="#" class="resultado">Reservar Ahora</a>
+            <a href="inicio_sesion.php" class="resultado">Reservar Ahora</a>
         </div>
     </section>
     <section class="cuadro">
@@ -68,7 +68,7 @@ include('encabezado/encabezado.php');
             <hr>
             <img src="img/carchi.jpg" width="250px" height="150px">
             <hr>
-            <a href="#" class="resultado">Reservar Ahora</a>
+            <a href="inicio_sesion.php" class="resultado">Reservar Ahora</a>
         </div>
         <div class="oferta">
             <h2>Chimborazo</h2>
@@ -86,7 +86,7 @@ include('encabezado/encabezado.php');
             <hr>
             <img src="img/oro.jpg" width="250px" height="150px">
             <hr>
-            <a href="#" class="resultado">Reservar Ahora</a>
+            <a href="inicio_sesion.php" class="resultado">Reservar Ahora</a>
         </div>
         <div class="oferta">
             <h2>Esmeraldas</h2>
@@ -95,11 +95,11 @@ include('encabezado/encabezado.php');
             <hr>
             <img src="img/esmeraldas.jpg" width="250px" height="150px">
             <hr>
-            <a href="#" class="resultado">Reservar Ahora</a>
+            <a href="inicio_sesion.php" class="resultado">Reservar Ahora</a>
         </div>
     </section><br>
     <div class="oferta2">
-        <a href="catalogo.php" class="resultado2">Ver mas</a>
+        <a href="inicio_sesion.php" class="resultado2">Ver mas</a>
     </div>
     </div><br><br>
     <div>
